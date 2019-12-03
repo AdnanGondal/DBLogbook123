@@ -1,24 +1,25 @@
-package MainPage;
+package Entries;
 
 import java.io.Serializable;
 import java.util.Date;
 
 public class BloodGlucoseLevel implements Serializable {
-    private Date date = new Date();
+    private Date date = new Date(); //Date stores the date and the time.
     private double level = 0;
-    BloodGlucoseLevel(){
-
-    }
-
-    public double getLevel(){
-        return level;
+    public BloodGlucoseLevel(){
     }
 
     public void setLevel(double l){
         level = l;
     }
+    public double getLevel(){
+        return level;
+    }
+
+
     public void setDate(Date d){
         date = d;
     }
+    public Date getDate(){return date;}
 
 }

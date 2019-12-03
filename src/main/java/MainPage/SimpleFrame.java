@@ -1,12 +1,14 @@
 package MainPage;
 
-import MainPage.GlucoseInput;
+import Entries.BloodGlucoseLevel;
+
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Calendar;
+import java.util.Date;
 
 public class SimpleFrame extends JFrame {
 
@@ -21,11 +23,10 @@ public class SimpleFrame extends JFrame {
         enter.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                BloodGlucoseLevel bgl = new BloodGlucoseLevel();
-                bgl.setLevel(gi.gettext());
-                bgl.setDate(Calendar.getInstance().getTime());
-                System.out.println(bgl.getLevel());
-                //Add code FOR SENDING TO SERVER.
+                Date date = new Date();
+                SimpleMethod SM = new SimpleMethod( date, gi.gettext());
+
+                //Add code FOR SENDING TO SERVER. (SEND SM- WHICH INCLUDES THE SIMPLE METHOD ENTRY FOR TODAY AND PUTS IT ON THE SERVER)
                 gi.emptytext();
                 setVisible(false);
             }

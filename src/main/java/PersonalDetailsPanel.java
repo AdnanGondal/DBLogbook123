@@ -8,22 +8,7 @@ public class PersonalDetailsPanel extends JPanel {
     private JTextField tname;
     private JLabel mno;
     private JTextField tmno;
-    private JLabel gender;
-    private JRadioButton male;
-    private JRadioButton female;
-    private ButtonGroup gengp;
-    private JLabel dob;
-    private JComboBox date;
-    private JComboBox month;
-    private JComboBox year;
-    private JLabel add;
-    private JTextArea tadd;
-    private JCheckBox term;
-    private JButton sub;
-    private JButton reset;
-    private JTextArea tout;
-    private JLabel res;
-    private JTextArea resadd;
+
 
     public PersonalDetailsPanel()
     { //Adapted from: https://www.geeksforgeeks.org/java-swing-simple-user-registration-form/
