@@ -1,13 +1,14 @@
 package Entries;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
 
-public class BloodGlucoseLevel implements Serializable {
-    private Date date = new Date(); //Date stores the date and the time.
+public class BloodGlucoseLevel extends Activity  {
+    private Date date = Calendar.getInstance().getTime(); //Date stores the date and the time.
     private double level = 0;
-    public BloodGlucoseLevel(){
-    }
+
+    public BloodGlucoseLevel(){ }
 
     public void setLevel(double l){
         level = l;
@@ -17,9 +18,9 @@ public class BloodGlucoseLevel implements Serializable {
     }
 
 
-    public void setDate(Date d){
+    public void setTime(Date d){
         date = d;
     }
-    public Date getDate(){return date;}
+    public Date getTime(){return date;}
 
 }

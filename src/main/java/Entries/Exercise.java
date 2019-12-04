@@ -2,9 +2,9 @@ package Entries;
 
 import java.util.Date;
 
-public class Exercise {
-    private Date StartTime;
-    private Date EndTime;
+public class Exercise extends Activity {
+    public Date StartTime;
+    public Date EndTime;
     private String Type;
     private String Name;
 
