@@ -5,10 +5,13 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class BloodGlucoseLevel extends Activity  {
-    private Date date = Calendar.getInstance().getTime(); //Date stores the date and the time.
+
+    private Date time;
     private double level = 0;
 
-    public BloodGlucoseLevel(){ }
+    public BloodGlucoseLevel(){
+
+    }
 
     public void setLevel(double l){
         level = l;
@@ -18,9 +21,11 @@ public class BloodGlucoseLevel extends Activity  {
     }
 
 
-    public void setTime(Date d){
-        date = d;
+    public void setTime(Date t){
+        time = t;
     }
-    public Date getTime(){return date;}
+    public String getTime(){return tf.format(time);}
+
+
 
 }

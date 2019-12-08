@@ -12,6 +12,6 @@ public class Food extends Activity{
     public void setTime(Date d){
         date = d;
     }
-    public Date getfTime(){return date;}
+    public Date getTime(){return date;}
 
 }

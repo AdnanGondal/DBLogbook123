@@ -13,36 +13,45 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class SimpleFrame extends JFrame {
+    Date date=new Date();
+    Date time;
+    JCheckBox gicheck = new JCheckBox("Add Glucose?");
+    JPanel Panel = new JPanel();
+    JButton enter = new JButton("Enter");
+    GlucoseInput gi = new GlucoseInput();
+    JCheckBox TSCheck = new JCheckBox("Are you taking the reading now?");
+
 
     public SimpleFrame(){
-        JPanel SimplePanel = new JPanel();
-        JButton enter = new JButton("Enter");
-        SimplePanel.setLayout(new GridLayout(2,1));
+        Panel.setLayout(new GridLayout(3,1));
         setSize(300,300);
-        GlucoseInput gi = new GlucoseInput();
-        SimplePanel.add(gi);
-        SimplePanel.add(enter);
-        enter.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Date date = new Date();
-                Method SM = new SimpleMethod( date, gi.gettext());
-                System.out.println(((SimpleMethod) SM).getSimpleMethod().getLevel());
-
-                //Above we get in the form of Date. To change this to string:
-                DateFormat df = new SimpleDateFormat("hh:mm, dd/mm/yyyy");
-                System.out.println("Time and Date: "+ df.format(((SimpleMethod) SM).getSimpleMethod().getTime()));
-
-                //Add code FOR SENDING TO SERVER. (SEND SM- WHICH INCLUDES THE SIMPLE METHOD ENTRY FOR TODAY AND PUTS IT ON THE SERVER)
-                gi.emptytext();
-                setVisible(false);
-            }
-        });
-        getContentPane().add(SimplePanel);
-
-
+        Panel.add(gi);
+        Panel.add(enter);
+        EnterButtonPressed();
+        getContentPane().add(Panel);
 
     }
 
+    private void EnterButtonPressed() {
+        enter.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                time = gi.getTime();
+                Method sm = new SimpleMethod();
+                ((SimpleMethod) sm).setBgl(time,gi.getuiGlucose());
+
+                //Next Three Lines: For demonstration Only.
+                System.out.println("BGL: " +((SimpleMethod) sm).getBGL().getLevel());
+                System.out.println("Date: " + ((SimpleMethod) sm).getBGL().getDate());
+                System.out.println("Time: "+((SimpleMethod) sm).getBGL().getTime());
+
+                //Add code FOR SENDING TO SERVER. (SEND SM- WHICH INCLUDES THE SIMPLE METHOD ENTRY FOR TODAY AND PUTS IT ON THE SERVER)
+                TSCheck.setSelected(true);
+                gi.emptyfield();
+                setVisible(false);
+                }
+
+        });
+    }
 
 }

@@ -11,10 +11,10 @@ public class Exercise extends Activity {
     public Exercise(){}
 
     public void setStartTime(Date start){ StartTime = start;}
-    public Date getStartTime(){return StartTime;}
+    public String getStartTime(){return tf.format(StartTime);}
 
     public void setEndTime(Date end){EndTime = end;}
-    public Date getEndTime(){return EndTime;}
+    public String getEndTime(){return tf.format(EndTime);}
 
     public void setType(String type){Type = type;}
     public String getType(){return Type;}

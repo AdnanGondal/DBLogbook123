@@ -10,12 +10,16 @@ public class SimpleMethod extends Method {
 
     protected BloodGlucoseLevel bgl = new BloodGlucoseLevel();
 
-    public SimpleMethod(Date Time,double level){
-        bgl.setTime(Time);
-        bgl.setLevel(level);
-    }
+    public SimpleMethod(){
 
-    public BloodGlucoseLevel getSimpleMethod(){
+    }
+    public void setBgl(Date time, double level){
+        //bgl.setDate(date);
+        bgl.setTime(time);
+        bgl.setLevel(level);
+
+    }
+    public BloodGlucoseLevel getBGL(){
         return bgl;
     };
 

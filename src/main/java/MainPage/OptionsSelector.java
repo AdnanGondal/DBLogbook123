@@ -18,6 +18,7 @@ public class OptionsSelector extends JPanel {
         control.add(info);
         control.add(SimpleBut);
         SimpleFrame sf = new SimpleFrame();
+        CompFrame cf = new CompFrame();
         control.add(CompBut);
         control.add(IntensiveBut);
         add(control);
@@ -26,6 +27,12 @@ public class OptionsSelector extends JPanel {
             public void actionPerformed(ActionEvent e) {
             sf.setVisible(true);
 
+            }
+        });
+        CompBut.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            cf.setVisible(true);
             }
         });
 
