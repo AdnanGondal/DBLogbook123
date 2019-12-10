@@ -1,4 +1,7 @@
-package MainPage;
+package MainPage.InputTools;
+
+import MainPage.CompFrame;
+import MainPage.SimpleFrame;
 
 import javax.swing.*;
 import java.awt.*;

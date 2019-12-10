@@ -1,6 +1,7 @@
 package MainPage;
 
-import MainPage.CalenderDisplay;
+import MainPage.InputTools.CalenderDisplay;
+import MainPage.InputTools.OptionsSelector;
 
 import javax.swing.*;
 import java.awt.*;

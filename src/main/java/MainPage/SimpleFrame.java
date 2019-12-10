@@ -1,5 +1,6 @@
 package MainPage;
 
+import MainPage.InputPanels.GlucoseInput;
 import MainPage.Methods.Method;
 import MainPage.Methods.SimpleMethod;
 
@@ -8,8 +9,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class SimpleFrame extends JFrame {

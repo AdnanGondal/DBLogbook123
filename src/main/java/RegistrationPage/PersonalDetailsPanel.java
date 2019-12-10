@@ -1,3 +1,5 @@
+package RegistrationPage;
+
 import javax.swing.*;
 import java.awt.*;
 

@@ -1,4 +1,4 @@
-package MainPage;
+package MainPage.InputTools;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;

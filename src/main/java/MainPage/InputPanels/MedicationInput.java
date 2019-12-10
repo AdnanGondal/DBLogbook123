@@ -1,4 +1,6 @@
-package MainPage;
+package MainPage.InputPanels;
+
+import MainPage.InputTools.TimeSelector;
 
 import javax.swing.*;
 import java.awt.*;

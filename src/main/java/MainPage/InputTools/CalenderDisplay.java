@@ -1,4 +1,4 @@
-package MainPage;
+package MainPage.InputTools;
 
 
 import Entries.Food;

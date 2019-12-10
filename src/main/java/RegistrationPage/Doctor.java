@@ -1,4 +1,4 @@
-package UserDetails;
+package RegistrationPage;
 
 public class Doctor extends Person {
     public Doctor(){}

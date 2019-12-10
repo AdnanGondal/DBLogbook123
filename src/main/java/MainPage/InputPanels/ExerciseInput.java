@@ -1,8 +1,9 @@
-package MainPage;
+package MainPage.InputPanels;
+
+import MainPage.InputTools.TimeSelector;
 
 import javax.swing.*;
 import java.awt.*;
-import java.sql.Time;
 import java.util.Date;
 
 public class ExerciseInput extends JPanel {

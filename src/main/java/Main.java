@@ -1,4 +1,5 @@
 import MainPage.MainPageUIControl;
+import RegistrationPage.RegistrationPageUIControl;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,4 +1,4 @@
-package UserDetails;
+package RegistrationPage;
 
 public class DBPatient extends Person {
     private String user_name;
