@@ -54,9 +54,10 @@ public class CompFrame extends SimpleFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Method cm = new CompMethod();
+
                 if (gicheck.isSelected()==true) {
                     ((CompMethod) cm).setBgl(gi.getTime(),gi.getuiGlucose());
-                    //Next 3 Lines are just to check only:
+                    //Next Lines are just to test only:
                     System.out.println("GI has been entered");
                     System.out.println("GI Date: "+((CompMethod) cm).getBGL().getDate());
                     System.out.println("GI Time: "+((CompMethod) cm).getBGL().getTime());
@@ -65,17 +66,56 @@ public class CompFrame extends SimpleFrame {
                 }
                 if (eiCheck.isSelected()==true) {
                     ((CompMethod) cm).setExercise(ei.getuiExName(),ei.getStartTime(),ei.getEndTime());
+                    //Next Lines are just to test only:
                     System.out.println("Exercise has been entered");
                     System.out.println("Exercise Date: "+((CompMethod) cm).getExercise().getDate());
                     System.out.println("Exercise Start Time: "+((CompMethod) cm).getExercise().getStartTime());
                     System.out.println("Exercise End Time: "+((CompMethod) cm).getExercise().getEndTime());
                     System.out.println("Exercise Name: "+((CompMethod) cm).getExercise().getType());
                 }
+                if (fiCheck.isSelected()==true) {
+                    ((CompMethod) cm).setFood(fi.getuiFoodName(),fi.getuiCarbAmmount(),fi.getTime());
+                    //Next Lines are just to test only:
+                    System.out.println("Food has been entered");
+                    System.out.println("Food Date: "+ ((CompMethod) cm).getFood().getDate());
+                    System.out.println("Food Time: "+ ((CompMethod) cm).getFood().getTime());
+                    System.out.println("Food Name: " + ((CompMethod) cm).getFood().getName());
+                    System.out.println("Carbohydrates (g): "+ ((CompMethod) cm).getFood().getCarbAmmount());
 
-                gi.emptyfield();
+                }
+
+                if (miCheck.isSelected()==true) {
+                    ((CompMethod) cm).setMedication(mi.getuiType(),mi.getuiDosage(),mi.getTime());
+                    //Next Lines are just to test only.
+                    System.out.println("Medication has been entered");
+                    System.out.println("Med Date: "+ ((CompMethod) cm).getMed().getDate());
+                    System.out.println("Med Time: "+ ((CompMethod) cm).getMed().getTime());
+                    System.out.println("Med Type: " + ((CompMethod) cm).getMed().gettype());
+                    System.out.println("Med Dosage: "+((CompMethod) cm).getMed().getDosage());
+
+                }
+
+                resetAll();
+                //P
+
                 setVisible(false);
             }
         });
+    }
+
+    public void resetAll() {
+        gi.reset();
+        gi.setVisible(true);
+        gicheck.setSelected(true);
+        ei.reset();
+        ei.setVisible(false);
+        eiCheck.setSelected(false);
+        mi.reset();
+        mi.setVisible(false);
+        miCheck.setSelected(false);
+        fi.reset();
+        fi.setVisible(false);
+        fiCheck.setSelected(false);
     }
 
 

@@ -1,4 +1,4 @@
-package MainPage.InputTools;
+package MainPage;
 
 import MainPage.CompFrame;
 import MainPage.SimpleFrame;
@@ -29,6 +29,7 @@ public class OptionsSelector extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
             sf.setVisible(true);
+            sf.gi.reset();
 
             }
         });
@@ -36,8 +37,11 @@ public class OptionsSelector extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
             cf.setVisible(true);
+            cf.resetAll();
             }
         });
+
+
 
 
     }

@@ -9,6 +9,7 @@ public class SimpleMethod extends Method {
 
 
     protected BloodGlucoseLevel bgl = new BloodGlucoseLevel();
+    protected boolean bglEntered;
 
     public SimpleMethod(){
 
@@ -17,6 +18,8 @@ public class SimpleMethod extends Method {
         //bgl.setDate(date);
         bgl.setTime(time);
         bgl.setLevel(level);
+        bglEntered = true;
+
 
     }
     public BloodGlucoseLevel getBGL(){

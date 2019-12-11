@@ -9,7 +9,7 @@ import java.util.Date;
 public class GlucoseInput extends JPanel {
     JLabel timelabel = new JLabel("Please Enter the time of the reading.");
     TimeSelector ts = new TimeSelector();
-    JLabel text = new JLabel("Please enter your blood glucose level: ");
+    JLabel text = new JLabel("Please enter your blood glucose level (mmol/L): ");
     JFormattedTextField uinput = new JFormattedTextField();
 
 
@@ -25,7 +25,9 @@ public class GlucoseInput extends JPanel {
     }
     public double getuiGlucose(){return (double) uinput.getValue();}
     public Date getTime(){return ts.getUserTime();}
-    public void emptyfield(){
+    public void reset(){
         uinput.setText("");
+        ts.reset();
     }
+
 }

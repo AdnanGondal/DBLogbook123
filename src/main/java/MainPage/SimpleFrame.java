@@ -46,8 +46,9 @@ public class SimpleFrame extends JFrame {
 
                 //Add code FOR SENDING TO SERVER. (SEND SM- WHICH INCLUDES THE SIMPLE METHOD ENTRY FOR TODAY AND PUTS IT ON THE SERVER)
                 TSCheck.setSelected(true);
-                gi.emptyfield();
+                gi.reset();
                 setVisible(false);
+
                 }
 
         });

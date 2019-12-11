@@ -4,6 +4,7 @@ import MainPage.InputTools.TimeSelector;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Date;
 
 public class MedicationInput extends JPanel {
     JLabel timelabel = new JLabel("Medication Time: ");
@@ -15,6 +16,8 @@ public class MedicationInput extends JPanel {
 
     public MedicationInput(){
         setLayout(new GridLayout(3,1));
+        typetext.setValue("e.g. Insulin Injection");
+        dosagetext.setValue("Dosage ");
         add(timelabel);
         add(ts);
         add(typelabel);
@@ -23,4 +26,22 @@ public class MedicationInput extends JPanel {
         add(dosagetext);
 
     }
+
+    public String getuiType(){
+        return (String) typetext.getValue();
+    }
+
+    public String getuiDosage(){
+        return (String) dosagetext.getValue();
+    }
+
+    public Date getTime(){
+        return ts.getUserTime();
+    }
+    public void reset(){
+        ts.reset();
+        typetext.setText("");
+        dosagetext.setText("");
+    }
+
 }

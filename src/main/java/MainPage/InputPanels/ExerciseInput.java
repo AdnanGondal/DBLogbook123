@@ -26,12 +26,14 @@ public class ExerciseInput extends JPanel {
         add(tend);
     }
 
-    public void emptyfields(){
-        nameinput.setText("");
-    }
     public Date getStartTime(){return tstart.getUserTime();}
     public Date getEndTime(){return tend.getUserTime(); }
     public String getuiExName(){return (String) nameinput.getValue();}
+    public void reset(){
+        nameinput.setText("e.g. Running");
+        tstart.reset();
+        tend.reset();
+    }
 
 
 }
