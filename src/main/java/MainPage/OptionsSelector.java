@@ -41,6 +41,13 @@ public class OptionsSelector extends JPanel {
             }
         });
 
+        IntensiveBut.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
 
 
 
