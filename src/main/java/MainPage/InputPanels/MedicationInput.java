@@ -7,12 +7,12 @@ import java.awt.*;
 import java.util.Date;
 
 public class MedicationInput extends JPanel {
-    JLabel timelabel = new JLabel("Medication Time: ");
-    TimeSelector ts = new TimeSelector();
-    JLabel typelabel = new JLabel("Medicine Type: ");
-    JFormattedTextField typetext = new JFormattedTextField();
-    JLabel dosagelabel = new JLabel("Dosage: ");
-    JFormattedTextField dosagetext = new JFormattedTextField();
+    private JLabel timelabel = new JLabel("Medication Time: ");
+    private TimeSelector ts = new TimeSelector();
+    private JLabel namelabel = new JLabel("Medicine Name: ");
+    private JFormattedTextField typetext = new JFormattedTextField();
+    private JLabel dosagelabel = new JLabel("Dosage: ");
+    private JFormattedTextField dosagetext = new JFormattedTextField();
 
     public MedicationInput(){
         setLayout(new GridLayout(3,1));
@@ -20,14 +20,14 @@ public class MedicationInput extends JPanel {
         dosagetext.setValue("Dosage ");
         add(timelabel);
         add(ts);
-        add(typelabel);
+        add(namelabel);
         add(typetext);
         add(dosagelabel);
         add(dosagetext);
 
     }
 
-    public String getuiType(){
+    public String getuiName(){
         return (String) typetext.getValue();
     }
 

@@ -7,12 +7,12 @@ import java.awt.*;
 import java.util.Date;
 
 public class FoodInput extends JPanel {
-    JLabel timelabel = new JLabel("Food time:");
-    TimeSelector ts = new TimeSelector();
-    JLabel namelabel = new JLabel("Food Name: ");
-    JFormattedTextField namefield = new JFormattedTextField();
-    JLabel carblabel = new JLabel("Carbohydrates(g): ");
-    JFormattedTextField carbfield = new JFormattedTextField();
+    private JLabel timelabel = new JLabel("Food time:");
+    private TimeSelector ts = new TimeSelector();
+    private JLabel namelabel = new JLabel("Food Name: ");
+    private JFormattedTextField namefield = new JFormattedTextField();
+    private JLabel carblabel = new JLabel("Carbohydrates(g): ");
+    private JFormattedTextField carbfield = new JFormattedTextField();
 
 
     public FoodInput(){

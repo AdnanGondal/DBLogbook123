@@ -9,27 +9,34 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class OptionsSelector extends JPanel {
+//The is the JPanel that contains all the buttons for selecting the Method the user wishes to add an entry for.
+    private JPanel control = new JPanel();
+    private JLabel info = new JLabel("Select the method you wish to add an entry with for today: ");
+    private JButton SimpleBut = new JButton("Simple Method");
+    private JButton CompBut = new JButton("Comprehensive Method");
+    private JButton IntensiveBut = new JButton("Intensive Method");
+    private SimpleFrame sf = new SimpleFrame(); //Objects of the classes that code the JFrames for the different Methods.
+    private CompFrame cf = new CompFrame();
+    private IntensiveFrame iF = new IntensiveFrame();
 
 
     public OptionsSelector(){
-        JPanel control = new JPanel();
         control.setLayout(new GridLayout(5,1));
-        JLabel info = new JLabel("Select the method you wish to add an entry with for today: ");
-        JButton SimpleBut = new JButton("Simple Method");
-        JButton CompBut = new JButton("Comprehensive Method");
-        JButton IntensiveBut = new JButton("Intensive Method");
         control.add(info);
         control.add(SimpleBut);
-        SimpleFrame sf = new SimpleFrame();
-        CompFrame cf = new CompFrame();
         control.add(CompBut);
         control.add(IntensiveBut);
         add(control);
+        ButtonsPressed();
+    }
+
+    private void ButtonsPressed() {
         SimpleBut.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            sf.setVisible(true);
-            sf.gi.reset();
+                // Code for what happens when
+                sf.setVisible(true);
+                sf.getGlucoseInput().reset();
 
             }
         });
@@ -44,13 +51,9 @@ public class OptionsSelector extends JPanel {
         IntensiveBut.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+            iF.setVisible(true);
             }
         });
-
-
-
-
     }
 
 }

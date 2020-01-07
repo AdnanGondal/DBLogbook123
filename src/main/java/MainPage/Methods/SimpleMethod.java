@@ -14,6 +14,14 @@ public class SimpleMethod extends Method {
     public SimpleMethod(){
 
     }
+
+    @Override
+    public String getDate() {
+        if (bglEntered==true) return bgl.getDate();
+        else return null;
+    }
+
+
     public void setBgl(Date time, double level){
         //bgl.setDate(date);
         bgl.setTime(time);
@@ -26,6 +34,5 @@ public class SimpleMethod extends Method {
         return bgl;
     };
 
-
-
 }
+

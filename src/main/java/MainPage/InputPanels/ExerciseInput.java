@@ -7,17 +7,16 @@ import java.awt.*;
 import java.util.Date;
 
 public class ExerciseInput extends JPanel {
-    JLabel nametext = new JLabel("Exercise Name: ");
-    JFormattedTextField nameinput = new JFormattedTextField();
-    JLabel starttext = new JLabel("Exercise Start Time: ");
-    TimeSelector tstart = new TimeSelector();
-    JLabel endtext = new JLabel("Exercise End Time: ");
-    TimeSelector tend = new TimeSelector();
+    protected JLabel nametext = new JLabel("Exercise Name: ");
+    protected JFormattedTextField nameinput = new JFormattedTextField();
+    protected JLabel starttext = new JLabel("Exercise Start Time: ");
+    protected TimeSelector tstart = new TimeSelector();
+    protected JLabel endtext = new JLabel("Exercise End Time: ");
+    protected TimeSelector tend = new TimeSelector();
 
     public ExerciseInput(){
         setLayout(new GridLayout(3,1));
         nameinput.setValue( "e.g. Running");
-
         add(nametext);
         add(nameinput);
         add(starttext);

@@ -12,13 +12,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class CompFrame extends SimpleFrame {
-    ExerciseInput ei = new ExerciseInput();
-    FoodInput fi = new FoodInput();
-    MedicationInput mi = new MedicationInput();
-    JCheckBox eiCheck = new JCheckBox("Add Exercise?");
-    JCheckBox fiCheck = new JCheckBox("Add Food?");
-    JCheckBox miCheck = new JCheckBox("Add Medication?");
-    JButton enterc = new JButton("Enter");
+    protected ExerciseInput ei = new ExerciseInput();
+    protected FoodInput fi = new FoodInput();
+    protected MedicationInput mi = new MedicationInput();
+    protected JCheckBox eiCheck = new JCheckBox("Add Exercise?");
+    protected JCheckBox fiCheck = new JCheckBox("Add Food?");
+    protected JCheckBox miCheck = new JCheckBox("Add Medication?");
+    protected JButton enterc = new JButton("Enter");
 
 
     public CompFrame()
@@ -44,7 +44,6 @@ public class CompFrame extends SimpleFrame {
         Panel.add(mi);
         Panel.add(enterc);
         EntercButtonpressed();
-
         getContentPane().add(Panel);
 
     }
@@ -62,6 +61,7 @@ public class CompFrame extends SimpleFrame {
                     System.out.println("GI Date: "+((CompMethod) cm).getBGL().getDate());
                     System.out.println("GI Time: "+((CompMethod) cm).getBGL().getTime());
                     System.out.println("Glucose Level: "+((CompMethod) cm).getBGL().getLevel());
+                    //Add database code
 
                 }
                 if (eiCheck.isSelected()==true) {
@@ -71,7 +71,7 @@ public class CompFrame extends SimpleFrame {
                     System.out.println("Exercise Date: "+((CompMethod) cm).getExercise().getDate());
                     System.out.println("Exercise Start Time: "+((CompMethod) cm).getExercise().getStartTime());
                     System.out.println("Exercise End Time: "+((CompMethod) cm).getExercise().getEndTime());
-                    System.out.println("Exercise Name: "+((CompMethod) cm).getExercise().getType());
+                    System.out.println("Exercise Name: "+((CompMethod) cm).getExercise().getName());
                 }
                 if (fiCheck.isSelected()==true) {
                     ((CompMethod) cm).setFood(fi.getuiFoodName(),fi.getuiCarbAmmount(),fi.getTime());
@@ -85,7 +85,7 @@ public class CompFrame extends SimpleFrame {
                 }
 
                 if (miCheck.isSelected()==true) {
-                    ((CompMethod) cm).setMedication(mi.getuiType(),mi.getuiDosage(),mi.getTime());
+                    ((CompMethod) cm).setMedication(mi.getuiName(),mi.getuiDosage(),mi.getTime());
                     //Next Lines are just to test only.
                     System.out.println("Medication has been entered");
                     System.out.println("Med Date: "+ ((CompMethod) cm).getMed().getDate());
@@ -94,14 +94,13 @@ public class CompFrame extends SimpleFrame {
                     System.out.println("Med Dosage: "+((CompMethod) cm).getMed().getDosage());
 
                 }
-
+                //Reset all input fields to original and close all the frames.
                 resetAll();
-                //P
-
                 setVisible(false);
             }
         });
     }
+
 
     public void resetAll() {
         gi.reset();

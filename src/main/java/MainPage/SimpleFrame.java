@@ -12,13 +12,14 @@ import java.awt.event.ActionListener;
 import java.util.Date;
 
 public class SimpleFrame extends JFrame {
-    Date date=new Date();
-    Date time;
-    JCheckBox gicheck = new JCheckBox("Add Glucose?");
-    JPanel Panel = new JPanel();
-    JButton enter = new JButton("Enter");
-    GlucoseInput gi = new GlucoseInput();
-    JCheckBox TSCheck = new JCheckBox("Are you taking the reading now?");
+    //The Class codes the Frame for the Simple Method
+    protected Date date=new Date();
+    protected Date time;
+    protected JCheckBox gicheck = new JCheckBox("Add Glucose?");
+    protected JPanel Panel = new JPanel();
+    protected JButton enter = new JButton("Enter");
+    protected GlucoseInput gi = new GlucoseInput();
+    protected JCheckBox TSCheck = new JCheckBox("Are you taking the reading now?");
 
 
     public SimpleFrame(){
@@ -53,5 +54,7 @@ public class SimpleFrame extends JFrame {
 
         });
     }
+
+    public GlucoseInput getGlucoseInput(){return gi;};
 
 }

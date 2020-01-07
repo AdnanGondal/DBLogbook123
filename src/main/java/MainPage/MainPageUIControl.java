@@ -1,26 +1,25 @@
 package MainPage;
 
-import MainPage.InputTools.CalenderDisplay;
-
 import javax.swing.*;
 import java.awt.*;
 
 public class MainPageUIControl {
-    JPanel mainPanel = new JPanel();
-    JPanel CalenderPanel = new JPanel();
-    JPanel OptionsPanel = new JPanel();
+    private JPanel mainPanel = new JPanel();
+    private JPanel CalenderPanel = new JPanel();
+    private JPanel OptionsPanel = new JPanel();
+    private OptionsSelector os = new OptionsSelector(); //See OptionsSelector Class
+    private CalenderDisplay cd = new CalenderDisplay();
 
 
     public MainPageUIControl(){
     mainPanel.setLayout(new GridLayout(1,1));
     CalenderPanel.setLayout(new GridLayout(1,1));
     OptionsPanel.setLayout(new GridLayout(1,1));
-    OptionsSelector os = new OptionsSelector();
-    CalenderDisplay cd = new CalenderDisplay();
     OptionsPanel.add(os);
     CalenderPanel.add(cd);
     mainPanel.add(CalenderPanel);
     mainPanel.add(OptionsPanel);
+    mainPanel.setVisible(true);
     }
 
 

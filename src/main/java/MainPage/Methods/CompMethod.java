@@ -13,10 +13,11 @@ public class CompMethod extends SimpleMethod {
 
 
     public CompMethod() {
+
     }
 
-    public void setExercise(String type,Date startTime, Date endTime) {
-        exercise.setType(type);
+    public void setExercise(String name,Date startTime, Date endTime) {
+        exercise.setName(name);
         exercise.setStartTime(startTime);
         exercise.setEndTime(endTime);
     }
@@ -42,4 +43,9 @@ public class CompMethod extends SimpleMethod {
         return med;
     }
 
+    @Override
+    public String getDate() {
+        if (bglEntered==true) return getDate();
+        else return null;
+    }
 }
