@@ -23,12 +23,14 @@ public class SimpleFrame extends JFrame {
 
 
     public SimpleFrame(){
-        Panel.setLayout(new GridLayout(3,1));
+        setTitle("New Simple Input");
         setSize(300,300);
+
+        Panel.setLayout(new GridLayout(2,1));
         Panel.add(gi);
         Panel.add(enter);
         EnterButtonPressed();
-        getContentPane().add(Panel);
+        getContentPane().add(Panel).setBackground(new Color(156, 234, 228));
 
     }
 

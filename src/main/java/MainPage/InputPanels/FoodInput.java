@@ -17,6 +17,7 @@ public class FoodInput extends JPanel {
 
     public FoodInput(){
         setLayout(new GridLayout(3,1));
+        setBackground(new Color(160,255, 150));
         namefield.setValue("e.g. Apple");
         carbfield.setValue(new Double(0.00));
         add(timelabel);

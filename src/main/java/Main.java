@@ -28,11 +28,11 @@ public class Main {
         if (RegistrationComplete == true) {
             //The Code for the Main Page Frame. (See MainPage Package)
             JFrame mainframe = new JFrame("Diabetic Logbook"); // Create a new JFrame
-            mainframe.setSize(1000, 500);
+            mainframe.setSize(500, 800);
             mainframe.setVisible(true);
             mainframe.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-            MainPageUIControl drawingUIController = new MainPageUIControl();
-            mainframe.getContentPane().add(drawingUIController.getMainPanel());
+            MainPageUIControl UIController = new MainPageUIControl();
+            mainframe.getContentPane().add(UIController.getMainPanel()).setBackground(new Color(156, 234, 228));
         }
     }
 }

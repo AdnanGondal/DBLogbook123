@@ -16,6 +16,7 @@ public class MedicationInput extends JPanel {
 
     public MedicationInput(){
         setLayout(new GridLayout(3,1));
+        setBackground(new Color(160,255, 150));
         typetext.setValue("e.g. Insulin Injection");
         dosagetext.setValue("Dosage ");
         add(timelabel);

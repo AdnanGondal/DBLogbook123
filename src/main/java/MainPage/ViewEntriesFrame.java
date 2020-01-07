@@ -11,7 +11,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class ViewEntriesFrame extends JFrame {
-    JPanel Panel = new JPanel();
+    JPanel panel = new JPanel();
     private JLabel intro;
     private String SelectedDate;
     private JLabel result;
@@ -19,33 +19,41 @@ public class ViewEntriesFrame extends JFrame {
 
     public ViewEntriesFrame(String d){
         setSize(400,400);
+        setTitle("View Entries");
+        panel.setLayout(null);
+
         SelectedDate = d;
         intro = new JLabel("The Selected Date: "+ SelectedDate);
-        intro.setFont(new Font("Arial", Font.PLAIN, 15));
+        intro.setFont(new Font("Arial", Font.PLAIN, 20));
         intro.setSize(300, 30);
-        intro.setLocation(100, 20);
+        intro.setLocation(5, 5);
 
 
 
         //BELOW IS E.G. FOR CURRENT DATE TO CHECK IF CODE WORKS
         Method method = new SimpleMethod();
         ((SimpleMethod) method).getBGL().setDate(Calendar.getInstance().getTime());
-        //ENTER CODE TO SEARCH THROUGH DATABASE AND MATCH THE METHOD(S) WITH THE SELECTED DATE
+        //ENTER CODE TO SEARCH THROUGH DATABASE AND MATCH THE METHOD(S) WITH THE SELECTED DATE...Add them to an array
+        //here and iterate through the array to display all the information.
 
         //Use a for Loop to go through all the methods that have the selected date, and print them out as a JLabel???
+
+
+
+        //Below: What to do if there is no entries for the selected date.
         if (SelectedDate != method.getDate()) {
             result = new JLabel("No Entries for this date.");
-            result.setFont(new Font("Arial", Font.PLAIN, 15));
+            result.setFont(new Font("Arial", Font.PLAIN, 20));
             result.setSize(300, 30);
-            result.setLocation(100, 40);
+            result.setLocation(5, 40);
         }
 
 
 
 
-        add(intro);
-        add(result);
-        getContentPane().add(Panel);
+        panel.add(intro);
+        panel.add(result);
+        getContentPane().add(panel).setBackground(new Color(156, 234, 228));
 
     }
 

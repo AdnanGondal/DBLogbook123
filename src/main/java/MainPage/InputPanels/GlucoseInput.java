@@ -17,6 +17,7 @@ public class GlucoseInput extends JPanel {
     public GlucoseInput(){
 
         setLayout(new GridLayout(4,1));
+        setBackground(new Color(160,255, 150));
         uinput.setValue(new Double(0.00));
         add(timelabel);
         add(ts);

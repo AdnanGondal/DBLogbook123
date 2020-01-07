@@ -16,6 +16,7 @@ public class ExerciseInput extends JPanel {
 
     public ExerciseInput(){
         setLayout(new GridLayout(3,1));
+        setBackground(new Color(160,255, 150));
         nameinput.setValue( "e.g. Running");
         add(nametext);
         add(nameinput);

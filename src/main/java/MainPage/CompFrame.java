@@ -23,6 +23,7 @@ public class CompFrame extends SimpleFrame {
 
     public CompFrame()
     {
+        setTitle("New Comprehensive Input");
         setSize(300,800);
         Panel.removeAll();
         Panel.setLayout(new GridLayout(9,1));

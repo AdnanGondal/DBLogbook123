@@ -18,6 +18,7 @@ public class IntensiveFrame extends CompFrame {
 
 
     public IntensiveFrame(){
+        setTitle("New Intensive Input");
         setSize(300,1000);
         Panel.removeAll();
         Panel.setLayout(new GridLayout(7,1));
@@ -25,7 +26,7 @@ public class IntensiveFrame extends CompFrame {
 
 
         IntensiveExerciseInputCheck();
-
+        CheckPanel.setBackground(new Color(160,255, 150));
         CheckPanel.add(gicheck);
         CheckPanel.add(ieiCheck);
         CheckPanel.add(fiCheck);
@@ -53,7 +54,7 @@ public class IntensiveFrame extends CompFrame {
 
                 }
                 if (ieiCheck.isSelected()==true) {
-                    ((IntensiveMethod) im).setIntensiveExercise(iei.getuiExType(),ei.getuiExName(),ei.getStartTime(),ei.getEndTime());
+                    ((IntensiveMethod) im).setIntensiveExercise(iei.getuiExType(),iei.getuiExName(),iei.getStartTime(),iei.getEndTime());
                     //Next Lines are just to test only:
                     System.out.println("INTENSIVE Exercise has been entered");
                     System.out.println("Exercise Date: "+((IntensiveMethod) im).getExercise().getDate());

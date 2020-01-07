@@ -6,6 +6,7 @@ import Entries.Insulin;
 import MainPage.ViewEntriesFrame;
 import org.jdesktop.swingx.JXDatePicker;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DateFormat;
@@ -17,20 +18,23 @@ import javax.swing.*;
 
 public class CalenderDisplay extends JPanel {
     //The Class that codes for the user being able to select a date and then they may view entries for this date.
-
+    private JPanel panel = new JPanel();
     private JXDatePicker picker = new JXDatePicker();
     private DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-    private JButton ViewEntries = new JButton("View Entries");
+    private JButton viewEntries = new JButton("View Entries");
     private JLabel selectDate = new JLabel("Please Select a Date: ");
-    private JPanel panel = new JPanel();
-    public  CalenderDisplay() {
 
+    public  CalenderDisplay() {
+            setLayout(new GridLayout(1,1));
+
+            panel.setBackground(new Color(160,255, 150));
             picker.setDate(Calendar.getInstance().getTime());
             picker.setFormats(new SimpleDateFormat("dd/MM/yyyy"));
+            panel.add(selectDate);
             panel.add(picker);
-            add(selectDate);
-            add(picker);
-            add(ViewEntries);
+            panel.add(viewEntries);
+            add(panel);
+
             ViewEntriesPressed();
             DateChanged();
     }
@@ -47,7 +51,7 @@ public class CalenderDisplay extends JPanel {
 
     private void ViewEntriesPressed() {
         //Code for what happens when 'View Entries' Button is pressed.
-        ViewEntries.addActionListener(new ActionListener() {
+        viewEntries.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ViewEntriesFrame vef = new ViewEntriesFrame(df.format(picker.getDate()));
