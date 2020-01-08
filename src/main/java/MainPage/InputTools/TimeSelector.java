@@ -16,6 +16,7 @@ public class TimeSelector extends JPanel {
 
     public TimeSelector() {
         setLayout(new GridLayout(1,1));
+        setBackground(new Color(160,255, 150));
         JSpinner.DateEditor timeEditor = new JSpinner.DateEditor(timeSpinner, "HH:mm");
         timeSpinner.setEditor(timeEditor);
         timeSpinner.setValue(new Date()); // will only show the current time

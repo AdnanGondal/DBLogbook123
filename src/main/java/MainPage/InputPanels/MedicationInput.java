@@ -7,29 +7,29 @@ import java.awt.*;
 import java.util.Date;
 
 public class MedicationInput extends JPanel {
-    private JLabel timelabel = new JLabel("Medication Time: ");
-    private TimeSelector ts = new TimeSelector();
-    private JLabel namelabel = new JLabel("Medicine Name: ");
-    private JFormattedTextField typetext = new JFormattedTextField();
-    private JLabel dosagelabel = new JLabel("Dosage: ");
-    private JFormattedTextField dosagetext = new JFormattedTextField();
+    protected JLabel timelabel = new JLabel("Medication Time: ");
+    protected TimeSelector ts = new TimeSelector();
+    protected JLabel namelabel = new JLabel("Medication Name: ");
+    protected JFormattedTextField nametext = new JFormattedTextField();
+    protected JLabel dosagelabel = new JLabel("Dosage: ");
+    protected JFormattedTextField dosagetext = new JFormattedTextField();
 
     public MedicationInput(){
         setLayout(new GridLayout(3,1));
         setBackground(new Color(160,255, 150));
-        typetext.setValue("e.g. Insulin Injection");
+        nametext.setValue("e.g. Metformin");
         dosagetext.setValue("Dosage ");
         add(timelabel);
         add(ts);
         add(namelabel);
-        add(typetext);
+        add(nametext);
         add(dosagelabel);
         add(dosagetext);
 
     }
 
     public String getuiName(){
-        return (String) typetext.getValue();
+        return (String) nametext.getValue();
     }
 
     public String getuiDosage(){
@@ -41,7 +41,7 @@ public class MedicationInput extends JPanel {
     }
     public void reset(){
         ts.reset();
-        typetext.setText("");
+        nametext.setText("e.g. Metformin");
         dosagetext.setText("");
     }
 

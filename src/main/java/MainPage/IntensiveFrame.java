@@ -1,6 +1,8 @@
 package MainPage;
 
 import MainPage.InputPanels.IntensiveExerciseInput;
+import MainPage.InputPanels.IntensiveFoodInput;
+import MainPage.InputPanels.IntensiveMedicationInput;
 import MainPage.Methods.CompMethod;
 import MainPage.Methods.IntensiveMethod;
 import MainPage.Methods.Method;
@@ -13,7 +15,11 @@ import java.awt.event.ActionListener;
 public class IntensiveFrame extends CompFrame {
     private JPanel CheckPanel = new JPanel();
     private IntensiveExerciseInput iei = new IntensiveExerciseInput();
+    private IntensiveMedicationInput imi = new IntensiveMedicationInput();
+    private IntensiveFoodInput ifi = new IntensiveFoodInput();
     private JCheckBox ieiCheck = new JCheckBox("Add Exercise?");
+    private JCheckBox imiCheck = new JCheckBox("Add Medication?");
+    private JCheckBox ifiCheck = new JCheckBox("Add Food?");
     private JButton enteri = new JButton("Enter");
 
 
@@ -21,21 +27,32 @@ public class IntensiveFrame extends CompFrame {
         setTitle("New Intensive Input");
         setSize(300,1000);
         Panel.removeAll();
-        Panel.setLayout(new GridLayout(7,1));
-        //gicheck.setLocation(100,50);
+        Panel.setLayout(new GridLayout(6,1));
+
 
 
         IntensiveExerciseInputCheck();
+        IntensiveMedicationInputCheck();
+        ifi.setVisible(false);
+        ifiCheck.setSelected(false);
+        ifiCheck.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (ifiCheck.isSelected()==true) {ifi.setVisible(true);}
+                if (ifiCheck.isSelected()==false) {ifi.setVisible(false);}
+            }
+        });
+
         CheckPanel.setBackground(new Color(160,255, 150));
         CheckPanel.add(gicheck);
         CheckPanel.add(ieiCheck);
-        CheckPanel.add(fiCheck);
-        CheckPanel.add(miCheck);
+        CheckPanel.add(ifiCheck);
+        CheckPanel.add(imiCheck);
         Panel.add(CheckPanel);
         Panel.add(gi);
         Panel.add(iei);
-        Panel.add(fi);
-        Panel.add(mi);
+        Panel.add(ifi);
+        Panel.add(imi);
         Panel.add(enteri);
 
         enteri.addActionListener(new ActionListener() {
@@ -73,15 +90,27 @@ public class IntensiveFrame extends CompFrame {
                 iei.reset();
                 iei.setVisible(false);
                 ieiCheck.setSelected(false);
-                mi.reset();
-                mi.setVisible(false);
-                miCheck.setSelected(false);
-                fi.reset();
-                fi.setVisible(false);
-                fiCheck.setSelected(false);
+                imi.reset();
+                imi.setVisible(false);
+                imiCheck.setSelected(false);
+                ifi.reset();
+                ifi.setVisible(false);
+                ifiCheck.setSelected(false);
             }
         });
 
+    }
+
+    private void IntensiveMedicationInputCheck() {
+        imi.setVisible(false);
+        imiCheck.setSelected(false);
+        imiCheck.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (imiCheck.isSelected()==true) {imi.setVisible(true);}
+                if (imiCheck.isSelected()==false) {imi.setVisible(false);}
+            }
+        });
     }
 
     private void IntensiveExerciseInputCheck() {

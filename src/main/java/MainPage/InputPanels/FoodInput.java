@@ -7,12 +7,12 @@ import java.awt.*;
 import java.util.Date;
 
 public class FoodInput extends JPanel {
-    private JLabel timelabel = new JLabel("Food time:");
-    private TimeSelector ts = new TimeSelector();
-    private JLabel namelabel = new JLabel("Food Name: ");
-    private JFormattedTextField namefield = new JFormattedTextField();
-    private JLabel carblabel = new JLabel("Carbohydrates(g): ");
-    private JFormattedTextField carbfield = new JFormattedTextField();
+    protected JLabel timelabel = new JLabel("Food time:");
+    protected TimeSelector ts = new TimeSelector();
+    protected JLabel namelabel = new JLabel("Food Name: ");
+    protected JFormattedTextField namefield = new JFormattedTextField();
+    protected JLabel carblabel = new JLabel("Carbohydrates(g): ");
+    protected JFormattedTextField carbfield = new JFormattedTextField();
 
 
     public FoodInput(){
@@ -39,7 +39,7 @@ public class FoodInput extends JPanel {
 
     public void reset(){
         ts.reset();
-        namefield.setText("");
+        namefield.setText("e.g. Apple");
         carbfield.setText("");
     }
 }

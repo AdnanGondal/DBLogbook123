@@ -12,7 +12,7 @@ public class IntensiveExerciseInput extends ExerciseInput {
     public IntensiveExerciseInput(){
         setLayout(new GridLayout(4,1));
         removeAll();
-        typeinput.setSelectedIndex(1);
+        typeinput.setSelectedIndex(0);
         nameinput.setValue( "e.g. Running");
         add(typetext);
         add(typeinput);

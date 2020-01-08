@@ -10,6 +10,7 @@ public class MainPageUIControl { //This Class codes for the JPanel that is prese
 
     public MainPageUIControl(){
 
+
     mainPanel.add(os);
     //mainPanel.add(cd);
     mainPanel.setVisible(true);
