@@ -10,7 +10,6 @@ public class PersonalDetailsPanel extends JPanel {
     private JLabel title;
     private JLabel personaldetailstitle;
     private JLabel namelabel;
-    private JLabel name;
     private JLabel emaillabel;
     private JLabel phonelabel;
     private JLabel typeLabel;
@@ -19,6 +18,10 @@ public class PersonalDetailsPanel extends JPanel {
     private JLabel doctornamelabel;
     private JLabel doctoremaillabel;
     private JLabel doctorphonelabel;
+    private JLabel accountdetailstitle;
+    private JLabel usernamelabel;
+    private JLabel passwordlabel;
+
     private JTextField tname;
     private JTextField temail;
     private JTextField tphone;
@@ -29,6 +32,10 @@ public class PersonalDetailsPanel extends JPanel {
     private JTextField tdoctorname;
     private JTextField tdoctoremail;
     private JTextField tdoctorphone;
+    private JTextField tusername;
+    private JTextField tpassword;
+
+    private RegistrationDetails registrationDetails = new RegistrationDetails();
 
 
 
@@ -39,8 +46,6 @@ public class PersonalDetailsPanel extends JPanel {
     { //Adapted from: https://www.geeksforgeeks.org/java-swing-simple-user-registration-form/
 
         setLayout(null);
-
-
 
         title = new JLabel("Registration Form");
         title.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -163,8 +168,59 @@ public class PersonalDetailsPanel extends JPanel {
         tdoctorphone.setLocation(200, 270);
         add(tdoctorphone);
 
+        accountdetailstitle = new JLabel("Account Details");
+        accountdetailstitle.setFont(new Font("Arial", Font.PLAIN, 20));
+        accountdetailstitle.setSize(300, 30);
+        accountdetailstitle.setLocation(100, 290);
+        add(accountdetailstitle);
+
+        usernamelabel = new JLabel("User Name: ");
+        usernamelabel.setFont(new Font("Arial", Font.PLAIN, 20));
+        usernamelabel.setSize(200,20);
+        usernamelabel.setLocation(100,320);
+        add(usernamelabel);
+
+        tusername = new JTextField();
+        tusername.setFont(new Font("Arial", Font.PLAIN, 20));
+        tusername.setSize(150,20);
+        tusername.setLocation(200,320);
+        add(tusername);
+
+        passwordlabel = new JLabel("Password: ");
+        passwordlabel.setFont(new Font("Arial", Font.PLAIN, 20));
+        passwordlabel.setSize(200,20);
+        passwordlabel.setLocation(100,340);
+        add(passwordlabel);
+
+        tpassword = new JTextField();
+        tpassword.setFont(new Font("Arial", Font.PLAIN, 20));
+        tpassword.setSize(150,20);
+        tpassword.setLocation(200,340);
+        add(tpassword);
+
 
     }
+
+    public RegistrationDetails getRegistrationDetails(){
+        return registrationDetails;
+    }
+
+    //Purpose of function below: To run when submit button is pressed and store everything in the RegistrationDetails class.
+    public void setRegistrationDetails(){
+        registrationDetails.setName(tname.getText());
+        registrationDetails.setEmail(temail.getText());
+        registrationDetails.setPhone(tphone.getText());
+        registrationDetails.setTypeofDiabetes((String) typeinput.getSelectedItem());
+        registrationDetails.setInsulinAdmin((String) admininput.getSelectedItem());
+        registrationDetails.setDoctorname(tdoctorname.getText());
+        registrationDetails.setDoctoremail(tdoctoremail.getText());
+        registrationDetails.setDoctorphone(tdoctorphone.getText());
+        registrationDetails.setUserName(tusername.getText());
+        registrationDetails.setPassword(tpassword.getText());
+
+    }
+
+
 
 
 }

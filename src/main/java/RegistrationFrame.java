@@ -30,6 +30,8 @@ public class RegistrationFrame extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
 
+
+
         mainframe.setSize(500, 800);
         mainframe.setVisible(false);
         mainframe.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -38,8 +40,22 @@ public class RegistrationFrame extends JFrame {
         submitBut.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //What happens when submit button on registration frame is pressed.
                 setVisible(false);
                 mainframe.setVisible(true);
+
+                pds.setRegistrationDetails();
+                //JUST FOR TESTING IF REGISTRATION DETAILS GET STORED IN CLASS/CAN PRINT TO CONSOLE:
+                //Instead of the code below it will be sent to the server/
+
+                System.out.println("Name: " + pds.getRegistrationDetails().getName());
+                System.out.println("Email: ");
+
+
+                System.out.println("Type of Diabetes: "+ pds.getRegistrationDetails().getTypeofDiabetes());
+
+
+                //END of testing.
             }
         });
     }

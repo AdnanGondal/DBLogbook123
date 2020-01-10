@@ -49,8 +49,6 @@ public class ViewEntriesFrame extends JFrame {
         }
 
 
-
-
         panel.add(intro);
         panel.add(result);
         getContentPane().add(panel).setBackground(new Color(156, 234, 228));
