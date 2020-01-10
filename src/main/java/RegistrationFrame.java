@@ -14,6 +14,8 @@ public class RegistrationFrame extends JFrame {
     private MainPageUIControl mainPageUIControl = new MainPageUIControl();
     private JFrame mainframe = new JFrame("Diabetic Logbook");
 
+
+
     public RegistrationFrame(){
 
         setSize(500, 800);
@@ -31,7 +33,7 @@ public class RegistrationFrame extends JFrame {
 
 
         mainframe.setSize(500, 800);
-        mainframe.setVisible(false);
+        mainframe.setVisible(true);
         mainframe.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainframe.getContentPane().add(mainPageUIControl.getMainPanel()).setBackground(new Color(156, 234, 228));
 

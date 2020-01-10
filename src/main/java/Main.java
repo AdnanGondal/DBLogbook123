@@ -11,7 +11,6 @@ public class Main {
 
         RegistrationFrame rf = new RegistrationFrame();
 
-
             /*
             JFrame registrationframe = new JFrame("Registration Frame");
             RegistrationPageUIControl registrationPageUIControl = new RegistrationPageUIControl();
