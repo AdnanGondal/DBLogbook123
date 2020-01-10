@@ -1,4 +1,4 @@
-package MainPage;
+package MainPage.Frames;
 
 import MainPage.InputPanels.GlucoseInput;
 import MainPage.Methods.Method;

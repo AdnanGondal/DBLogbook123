@@ -7,6 +7,7 @@ import java.awt.*;
 import java.util.Date;
 
 public class MedicationInput extends JPanel {
+    //Class that codes for Medication Input.
     protected JLabel timelabel = new JLabel("Medication Time: ");
     protected TimeSelector ts = new TimeSelector();
     protected JLabel namelabel = new JLabel("Medication Name: ");

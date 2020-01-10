@@ -1,9 +1,7 @@
-package MainPage;
+package MainPage.InputTools;
 
 
-import Entries.Food;
-import Entries.Insulin;
-import MainPage.ViewEntriesFrame;
+import MainPage.Frames.ViewEntriesFrame;
 import org.jdesktop.swingx.JXDatePicker;
 
 import java.awt.*;
@@ -12,12 +10,13 @@ import java.awt.event.ActionListener;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import javax.swing.*;
 
 
 public class CalenderDisplay extends JPanel {
-    //The Class that codes for the user being able to select a date and then they may view entries for this date.
+    //The Class that codes for the user being able to select a date by either entering it or selecting via Calender.
+    //Adapted From https://stackoverflow.com/questions/11736878/display-calendar-to-pick-a-date-in-java
+
     private JPanel panel = new JPanel();
     private JXDatePicker picker = new JXDatePicker();
     private DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
@@ -54,7 +53,7 @@ public class CalenderDisplay extends JPanel {
         viewEntries.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ViewEntriesFrame vef = new ViewEntriesFrame(df.format(picker.getDate()));
+                ViewEntriesFrame vef = new ViewEntriesFrame(df.format(picker.getDate())); //See ViewEntriesFrame class.
                 vef.setVisible(true);
                // System.out.println(df.format(picker.getDate()));
             }

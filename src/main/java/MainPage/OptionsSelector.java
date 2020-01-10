@@ -1,7 +1,7 @@
 package MainPage;
 
-import MainPage.CompFrame;
-import MainPage.SimpleFrame;
+import MainPage.Frames.*;
+import MainPage.InputTools.CalenderDisplay;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class OptionsSelector extends JPanel {
-//The is the JPanel that contains titles and the buttons for selecting the Method the user wishes to add an entry for.
+//The is the JPanel that contains every function present in the Diabetic Logbook.
 //It is added to the Main Frame.
     private JPanel addEntriesPanel = new JPanel();
     private JPanel viewEntriesPanel = new JPanel();
@@ -20,14 +20,17 @@ public class OptionsSelector extends JPanel {
     private JButton simpleBut = new JButton("Simple Method");
     private JButton compBut = new JButton("Comprehensive Method");
     private JButton intensiveBut = new JButton("Intensive Method");
-    private SimpleFrame sf = new SimpleFrame(); //Objects of the classes that code the JFrames for the different Methods.
+    //Objects of the classes that code for the frames for different Methods of adding logbook entry.
+    private SimpleFrame sf = new SimpleFrame();
     private CompFrame cf = new CompFrame();
     private IntensiveFrame iF = new IntensiveFrame();
+    ///Objects of classes that code for some other useful features.
     private SettingsFrame sF = new SettingsFrame();
     private HelpFrame hF = new HelpFrame();
     private QuesFrame jF = new QuesFrame();
+
     private JLabel viewEntries = new JLabel("View Entries: ");
-    private CalenderDisplay cd = new CalenderDisplay();
+    private CalenderDisplay cd = new CalenderDisplay(); // See CalenderDisplay class. Allows user to select date via calender.
     private JLabel othertitle = new JLabel("Other: ");
     private JButton quesBut = new JButton("Questionnaire");
     private JButton helpBut = new JButton("Help");
@@ -39,6 +42,7 @@ public class OptionsSelector extends JPanel {
     public OptionsSelector(){
 
         setLayout(new GridLayout(3,1 ));
+        //Methods Have been extracted: See Below.
         ModifyPanels();
         ModifyText();
         ArrangePanels();
@@ -46,6 +50,7 @@ public class OptionsSelector extends JPanel {
     }
 
     private void ArrangePanels() {
+        //Add three JPanels into this Panel and add the different features of UI here.
         addEntriesPanel.add(welcome);
         addEntriesPanel.add(addEntries);
         addEntriesPanel.add(info);
@@ -67,6 +72,7 @@ public class OptionsSelector extends JPanel {
     }
 
     private void ModifyText() {
+        //Change fonts and size of text in the Panel.
         welcome.setFont(new Font("Arial", Font.BOLD, 30));
         addEntries.setFont(new Font("Arial", Font.PLAIN, 20));
         viewEntries.setFont(new Font("Arial", Font.PLAIN, 20));
@@ -74,6 +80,7 @@ public class OptionsSelector extends JPanel {
     }
 
     private void ModifyPanels() {
+        //Change colours and Layout of JPanels
         addEntriesPanel.setLayout(new GridLayout(7,1));
         addEntriesPanel.setBackground(new Color(160,255, 150));
         viewEntriesPanel.setLayout(new GridLayout(2,1));
@@ -83,6 +90,8 @@ public class OptionsSelector extends JPanel {
     }
 
     private void ButtonsPressed() {
+        //What happens when the different buttons are pressed by the user:
+
         simpleBut.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

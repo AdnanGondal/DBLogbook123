@@ -9,10 +9,11 @@ import java.util.Date;
 
 public class TimeSelector extends JPanel {
     //This class codes the tool that allows the user to input a time. Objects of this class are repeated throughout the code.
+    //Adapted from https://stackoverflow.com/questions/654342/is-there-any-good-and-free-date-and-time-picker-available-for-java-swing
     private Date time = new Date();
     private JSpinner timeSpinner = new JSpinner(new SpinnerDateModel());
-    private JLabel label = new JLabel("Please Select the Time");
-    //Adapted from https://stackoverflow.com/questions/654342/is-there-any-good-and-free-date-and-time-picker-available-for-java-swing
+
+
 
     public TimeSelector() {
         setLayout(new GridLayout(1,1));
@@ -21,7 +22,6 @@ public class TimeSelector extends JPanel {
         timeSpinner.setEditor(timeEditor);
         timeSpinner.setValue(new Date()); // will only show the current time
         timeSpinner.setSize(40,10);
-        //add(label);
         add(timeSpinner);
         TimeChanged();
 

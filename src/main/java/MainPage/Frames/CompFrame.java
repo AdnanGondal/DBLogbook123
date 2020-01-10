@@ -1,4 +1,4 @@
-package MainPage;
+package MainPage.Frames;
 
 import MainPage.InputPanels.ExerciseInput;
 import MainPage.InputPanels.FoodInput;
@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class CompFrame extends SimpleFrame {
+    //Codes for User Comprehensive input.
     protected ExerciseInput ei = new ExerciseInput();
     protected FoodInput fi = new FoodInput();
     protected MedicationInput mi = new MedicationInput();
@@ -50,11 +51,12 @@ public class CompFrame extends SimpleFrame {
     }
 
     private void EntercButtonpressed() {
+        //What happens when enter button is pressed.
         enterc.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Method cm = new CompMethod();
-
+                //If each of the check boxes is ticked...:
                 if (gicheck.isSelected()==true) {
                     ((CompMethod) cm).setBgl(gi.getTime(),gi.getuiGlucose());
                     //Next Lines are just to test only:
@@ -73,6 +75,7 @@ public class CompFrame extends SimpleFrame {
                     System.out.println("Exercise Start Time: "+((CompMethod) cm).getExercise().getStartTime());
                     System.out.println("Exercise End Time: "+((CompMethod) cm).getExercise().getEndTime());
                     System.out.println("Exercise Name: "+((CompMethod) cm).getExercise().getName());
+                    //Add database code
                 }
                 if (fiCheck.isSelected()==true) {
                     ((CompMethod) cm).setFood(fi.getuiFoodName(),fi.getuiCarbAmmount(),fi.getTime());
@@ -82,6 +85,7 @@ public class CompFrame extends SimpleFrame {
                     System.out.println("Food Time: "+ ((CompMethod) cm).getFood().getTime());
                     System.out.println("Food Name: " + ((CompMethod) cm).getFood().getName());
                     System.out.println("Carbohydrates (g): "+ ((CompMethod) cm).getFood().getCarbAmmount());
+
 
                 }
 
@@ -104,6 +108,7 @@ public class CompFrame extends SimpleFrame {
 
 
     public void resetAll() {
+        //set all the input fields to how they were originally.
         gi.reset();
         gi.setVisible(true);
         gicheck.setSelected(true);

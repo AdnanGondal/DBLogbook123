@@ -15,10 +15,9 @@ public class SimpleMethod extends Method {
 
     }
 
-    @Override
+
     public String getDate() {
-        if (bglEntered==true) return bgl.getDate();
-        else return null;
+        return bgl.getDate();
     }
 
 

@@ -1,4 +1,4 @@
-package MainPage;
+package MainPage.Frames;
 
 import MainPage.InputPanels.GlucoseInput;
 import MainPage.Methods.Method;
@@ -38,16 +38,21 @@ public class SimpleFrame extends JFrame {
         enter.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //What happens when entered button is pressed.
                 time = gi.getTime();
-                Method sm = new SimpleMethod();
+
+                Method sm = new SimpleMethod(); //See Method and SimpleMethod class.
                 ((SimpleMethod) sm).setBgl(time,gi.getuiGlucose());
 
-                //Next Three Lines: For demonstration Only.
+                //Next Three Lines: For demonstration Only: Print to console when enter button is pressed
+                //to check everything gets stored in the class and is ready for the database .
                 System.out.println("BGL: " +((SimpleMethod) sm).getBGL().getLevel());
                 System.out.println("Date: " + ((SimpleMethod) sm).getBGL().getDate());
                 System.out.println("Time: "+((SimpleMethod) sm).getBGL().getTime());
 
-                //Add code FOR SENDING TO SERVER. (SEND SM- WHICH INCLUDES THE SIMPLE METHOD ENTRY FOR TODAY AND PUTS IT ON THE SERVER)
+                //ADD CODE FOR SENDING TO DATABASE HERE
+
+
                 TSCheck.setSelected(true);
                 gi.reset();
                 setVisible(false);

@@ -1,4 +1,4 @@
-package MainPage;
+package MainPage.Frames;
 
 import MainPage.Methods.Method;
 import MainPage.Methods.SimpleMethod;
@@ -32,7 +32,7 @@ public class ViewEntriesFrame extends JFrame {
 
         //BELOW IS E.G. FOR CURRENT DATE TO CHECK IF CODE WORKS
         Method method = new SimpleMethod();
-        ((SimpleMethod) method).getBGL().setDate(Calendar.getInstance().getTime());
+        ((SimpleMethod) method).getBGL().setDate(new Date());
         //ENTER CODE TO SEARCH THROUGH DATABASE AND MATCH THE METHOD(S) WITH THE SELECTED DATE...Add them to an array
         //here and iterate through the array to display all the information.
 
@@ -40,9 +40,16 @@ public class ViewEntriesFrame extends JFrame {
 
 
 
-        //Below: What to do if there is no entries for the selected date.
-        if (SelectedDate != method.getDate()) {
+        //Below: What to do if there is no entries for the selected date. (Incomplete)
+        if (SelectedDate != ((SimpleMethod) method).getDate()) {
             result = new JLabel("No Entries for this date.");
+            result.setFont(new Font("Arial", Font.PLAIN, 20));
+            result.setSize(300, 30);
+            result.setLocation(5, 40);
+        }
+
+        if (SelectedDate== ((SimpleMethod) method).getDate()){
+            result = new JLabel("There are entries for this date.");
             result.setFont(new Font("Arial", Font.PLAIN, 20));
             result.setSize(300, 30);
             result.setLocation(5, 40);

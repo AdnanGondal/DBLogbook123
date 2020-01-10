@@ -1,5 +1,6 @@
-package MainPage;
+package MainPage.Frames;
 
+import MainPage.Frames.CompFrame;
 import MainPage.InputPanels.IntensiveExerciseInput;
 import MainPage.InputPanels.IntensiveFoodInput;
 import MainPage.InputPanels.IntensiveMedicationInput;
@@ -13,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class IntensiveFrame extends CompFrame {
+    //Class codes for the user Intensive method input.
     private JPanel CheckPanel = new JPanel();
     private IntensiveExerciseInput iei = new IntensiveExerciseInput();
     private IntensiveMedicationInput imi = new IntensiveMedicationInput();
@@ -29,19 +31,9 @@ public class IntensiveFrame extends CompFrame {
         Panel.removeAll();
         Panel.setLayout(new GridLayout(6,1));
 
-
-
         IntensiveExerciseInputCheck();
         IntensiveMedicationInputCheck();
-        ifi.setVisible(false);
-        ifiCheck.setSelected(false);
-        ifiCheck.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (ifiCheck.isSelected()==true) {ifi.setVisible(true);}
-                if (ifiCheck.isSelected()==false) {ifi.setVisible(false);}
-            }
-        });
+        IntensiveFoodInputCheck();
 
         CheckPanel.setBackground(new Color(160,255, 150));
         CheckPanel.add(gicheck);
@@ -82,7 +74,7 @@ public class IntensiveFrame extends CompFrame {
 
 
 
-
+                //Reset:
                 setVisible(false);
                 gi.reset();
                 gi.setVisible(true);
@@ -99,6 +91,18 @@ public class IntensiveFrame extends CompFrame {
             }
         });
 
+    }
+
+    private void IntensiveFoodInputCheck() {
+        ifi.setVisible(false);
+        ifiCheck.setSelected(false);
+        ifiCheck.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (ifiCheck.isSelected()==true) {ifi.setVisible(true);}
+                if (ifiCheck.isSelected()==false) {ifi.setVisible(false);}
+            }
+        });
     }
 
     private void IntensiveMedicationInputCheck() {

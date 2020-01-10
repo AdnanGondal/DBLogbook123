@@ -7,7 +7,7 @@ import java.awt.*;
 import java.util.Date;
 
 public class GlucoseInput extends JPanel {
-    //Panel that codes for the user glucose input.
+    //Class that codes for the user glucose input.
     private JLabel timelabel = new JLabel("Please Enter the time of the reading.");
     private TimeSelector ts = new TimeSelector();
     private JLabel text = new JLabel("Please enter your blood glucose level (mmol/L): ");

@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class IntensiveFoodInput extends FoodInput {
+    //Class that codes for Food Input for Intensive Method (ie Food Diary).
     private JLabel typelabel = new JLabel("Meal Type:");
     private String[] typelist = {"Snack", "Breakfast","Lunch","Dinner"};
     private JComboBox<String> typeinput = new JComboBox<>(typelist);

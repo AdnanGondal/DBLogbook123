@@ -7,6 +7,7 @@ import java.awt.*;
 import java.util.Date;
 
 public class ExerciseInput extends JPanel {
+    //Class that codes for User Exercise Input.
     protected JLabel nametext = new JLabel("Exercise Name: ");
     protected JFormattedTextField nameinput = new JFormattedTextField();
     protected JLabel starttext = new JLabel("Exercise Start Time: ");

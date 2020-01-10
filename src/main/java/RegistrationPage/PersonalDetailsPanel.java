@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 //This class codes for the JPanel that includes all the user registration page inputs.
 public class PersonalDetailsPanel extends JPanel {
-    private Container c;
+    //All the labels on the page.
     private JLabel title;
     private JLabel personaldetailstitle;
     private JLabel namelabel;
@@ -23,6 +23,7 @@ public class PersonalDetailsPanel extends JPanel {
     private JLabel usernamelabel;
     private JLabel passwordlabel;
 
+    //All the user inputs: includes text fields and combo boxes.
     private JTextField tname;
     private JTextField temail;
     private JTextField tphone;
@@ -206,7 +207,7 @@ public class PersonalDetailsPanel extends JPanel {
         return registrationDetails;
     }
 
-    //Purpose of function below: To run when submit button is pressed and store everything in the RegistrationDetails class.
+    //Function below: To run when submit button is pressed and store everything in an object of the RegistrationDetails class.
     public void setRegistrationDetails(){
         registrationDetails.setName(tname.getText());
         registrationDetails.setEmail(temail.getText());

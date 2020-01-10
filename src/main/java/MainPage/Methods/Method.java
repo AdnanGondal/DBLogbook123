@@ -9,5 +9,5 @@ public class Method {
 
     }
 
-    public  String getDate(){return null;}
+
 }

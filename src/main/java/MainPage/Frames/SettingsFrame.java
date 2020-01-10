@@ -1,9 +1,11 @@
-package MainPage;
+package MainPage.Frames;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class SettingsFrame extends JFrame {
+    //Class that codes for Settings Frame Page.
+    //This page will in a future version allow the user to change any registration details they entered.
 
     private JPanel panel = new JPanel();
     private JLabel title = new JLabel("Settings");
@@ -18,9 +20,6 @@ public class SettingsFrame extends JFrame {
         title.setSize(300, 30);
         title.setLocation(5, 5);
         panel.add(title);
-
-
-
 
         getContentPane().add(panel).setBackground(new Color(156, 234, 228));
     }

@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class IntensiveExerciseInput extends ExerciseInput {
+    //Class codes for exercise input for Intensive Method.
     private JLabel typetext = new JLabel("Exercise Type: ");
     //The options for the selection of type of exercise.
     private String[] typelist = {"Aerobic", "Strength","Flexibility","Balance"};

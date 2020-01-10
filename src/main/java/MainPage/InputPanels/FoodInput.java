@@ -7,6 +7,7 @@ import java.awt.*;
 import java.util.Date;
 
 public class FoodInput extends JPanel {
+    //Class that codes for user Food Input.
     protected JLabel timelabel = new JLabel("Food time:");
     protected TimeSelector ts = new TimeSelector();
     protected JLabel namelabel = new JLabel("Food Name: ");
