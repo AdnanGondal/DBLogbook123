@@ -11,6 +11,7 @@ public class Main {
 
         RegistrationFrame rf = new RegistrationFrame();
 
+        rf.setVisible(true);
             /*
             JFrame registrationframe = new JFrame("Registration Frame");
             RegistrationPageUIControl registrationPageUIControl = new RegistrationPageUIControl();

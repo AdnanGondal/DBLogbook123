@@ -33,7 +33,7 @@ public class RegistrationFrame extends JFrame {
 
 
         mainframe.setSize(500, 800);
-        mainframe.setVisible(true);
+        mainframe.setVisible(false);
         mainframe.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainframe.getContentPane().add(mainPageUIControl.getMainPanel()).setBackground(new Color(156, 234, 228));
 
