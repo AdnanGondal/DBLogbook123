@@ -25,9 +25,11 @@ public class OptionsSelector extends JPanel {
     private IntensiveFrame iF = new IntensiveFrame();
     private SettingsFrame sF = new SettingsFrame();
     private HelpFrame hF = new HelpFrame();
+    private QuesFrame jF = new QuesFrame();
     private JLabel viewEntries = new JLabel("View Entries: ");
     private CalenderDisplay cd = new CalenderDisplay();
     private JLabel othertitle = new JLabel("Other: ");
+    private JButton quesBut = new JButton("Questionnaire");
     private JButton helpBut = new JButton("Help");
     private JButton settingsBut = new JButton("Settings");
 
@@ -55,6 +57,7 @@ public class OptionsSelector extends JPanel {
         viewEntriesPanel.add(cd);
 
         otherPanel.add(othertitle);
+        otherPanel.add(quesBut);
         otherPanel.add(helpBut);
         otherPanel.add(settingsBut);
 
@@ -115,6 +118,13 @@ public class OptionsSelector extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 hF.setVisible(true);
+            }
+        });
+
+        quesBut.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jF.setVisible(true);
             }
         });
     }

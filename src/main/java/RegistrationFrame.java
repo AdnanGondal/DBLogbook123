@@ -14,6 +14,8 @@ public class RegistrationFrame extends JFrame {
     private MainPageUIControl mainPageUIControl = new MainPageUIControl();
     private JFrame mainframe = new JFrame("Diabetic Logbook");
 
+
+
     public RegistrationFrame(){
 
         setSize(500, 800);
@@ -46,16 +48,21 @@ public class RegistrationFrame extends JFrame {
 
                 pds.setRegistrationDetails();
                 //JUST FOR TESTING IF REGISTRATION DETAILS GET STORED IN CLASS/CAN PRINT TO CONSOLE:
-                //Instead of the code below it will be sent to the server/
+                //Instead of the code below printing to the console it will be sent to the server/
 
+
+                System.out.println("Username: " + pds.getRegistrationDetails().getUserName());
+                System.out.println("Password: " + pds.getRegistrationDetails().getName());
                 System.out.println("Name: " + pds.getRegistrationDetails().getName());
-                System.out.println("Email: ");
-
-
+                System.out.println("Email: " + pds.getRegistrationDetails().getEmail());
+                System.out.println("Phone Number: " + pds.getRegistrationDetails().getPhone());
                 System.out.println("Type of Diabetes: "+ pds.getRegistrationDetails().getTypeofDiabetes());
+                System.out.println("Insulin Administered By: " + pds.getRegistrationDetails().getInsulinAdmin());
+                System.out.println("Doctor Name: " + pds.getRegistrationDetails().getDoctorname());
+                System.out.println("Doctor Email: " + pds.getRegistrationDetails().getDoctorEmail());
+                System.out.println("Phone Number: " + pds.getRegistrationDetails().getDoctorphone());
 
-
-                //END of testing.
+                //END of testing the class.
             }
         });
     }
