@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+//This class codes for the JPanel that includes all the user registration page inputs.
 public class PersonalDetailsPanel extends JPanel {
     private Container c;
     private JLabel title;
