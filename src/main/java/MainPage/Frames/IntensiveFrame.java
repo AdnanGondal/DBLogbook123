@@ -86,17 +86,17 @@ public class IntensiveFrame extends CompFrame {
 
                 if (imiCheck.isSelected()==true){
                     ((IntensiveMethod) im).setIntensiveMed(imi.getuiMedType(),imi.getuiName(),imi.getTime(),imi.getuiDosage());
-                    System.out.println("INTENSIVE Food has been entered");
+                    System.out.println("INTENSIVE Med has been entered");
                     System.out.println("Med Date: "+((IntensiveMethod) im).getDate());
                     System.out.println("Med Time: "+((IntensiveMethod) im).getMed().getTime());
                     System.out.println("Med Name: "+((IntensiveMethod) im).getMed().getName());
                     System.out.println("Med Type: "+((IntensiveMethod) im).getMed().gettype());
-                    System.out.println("Dosage: "+((IntensiveMethod) im).getMed().getDosage());
+                    System.out.println("Med Dosage: "+((IntensiveMethod) im).getMed().getDosage());
 
 
                     //Add database code
                 }
-
+                setVisible(false);
                 ResetAllIntensive();
 
 
@@ -107,7 +107,7 @@ public class IntensiveFrame extends CompFrame {
 
     public void ResetAllIntensive() {
         //Reset Frame:
-        setVisible(false);
+
         gi.reset();
         gi.setVisible(true);
         gicheck.setSelected(true);
