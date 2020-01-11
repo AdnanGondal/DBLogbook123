@@ -50,7 +50,7 @@ public class PersonalDetailsPanel extends JPanel {
         setLayout(null);
 
         title = new JLabel("Registration Form");
-        title.setFont(new Font("Arial", Font.PLAIN, 30));
+        title.setFont(new Font("Arial", Font.BOLD, 30));
         title.setSize(300, 30);
         title.setLocation(100, 10);
         add(title);
