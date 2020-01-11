@@ -101,6 +101,7 @@ public class OptionsSelector extends JPanel {
 
             }
         });
+
         compBut.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
