@@ -7,6 +7,7 @@ public class Food extends Activity{
     private Date time;
     private String name;
     private Double carbAmmount;
+    private String mealType;
 
     public Food(){}
 
@@ -25,4 +26,12 @@ public class Food extends Activity{
         carbAmmount = c;
     }
     public Double getCarbAmmount(){return carbAmmount;}
+
+    public void setMealType(String m){
+        mealType = m;
+    }
+
+    public String getMealType(){
+        return mealType;
+    }
 }

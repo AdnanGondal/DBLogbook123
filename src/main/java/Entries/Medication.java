@@ -5,11 +5,19 @@ import java.util.Date;
 public class Medication extends Activity {
     private Date time;
     private String dosage;
+    private String name;
     private String type;
 
     public Medication(){
 
     }
+
+    public void setName(String n){name =n;}
+
+    public String getName() {
+        return name;
+    }
+
     public void setDosage(String l){
         dosage = l;
     }
@@ -17,7 +25,7 @@ public class Medication extends Activity {
         return dosage;
     }
 
-    public void setType(String t) {type = t;}
+    public void setType(String t) {type= t;}
     public String gettype(){return type;}
 
 
