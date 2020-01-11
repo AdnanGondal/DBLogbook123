@@ -21,13 +21,13 @@ public class OptionsSelector extends JPanel {
     private JButton compBut = new JButton("Comprehensive Method");
     private JButton intensiveBut = new JButton("Intensive Method");
     //Objects of the classes that code for the frames for different Methods of adding logbook entry.
-    private SimpleFrame sf = new SimpleFrame();
-    private CompFrame cf = new CompFrame();
-    private IntensiveFrame iF = new IntensiveFrame();
+    private SimpleFrame simplef = new SimpleFrame();
+    private CompFrame compf = new CompFrame();
+    private IntensiveFrame intenF = new IntensiveFrame();
     ///Objects of classes that code for some other useful features.
-    private SettingsFrame sF = new SettingsFrame();
-    private HelpFrame hF = new HelpFrame();
-    private QuesFrame jF = new QuesFrame();
+    private SettingsFrame settingsF = new SettingsFrame();
+    private HelpFrame helpF = new HelpFrame();
+    private QuesFrame quesF = new QuesFrame();
 
     private JLabel viewEntries = new JLabel("View Entries: ");
     private CalenderDisplay cd = new CalenderDisplay(); // See CalenderDisplay class. Allows user to select date via calender.
@@ -95,45 +95,46 @@ public class OptionsSelector extends JPanel {
         simpleBut.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Code for what happens when
-                sf.setVisible(true);
-                sf.getGlucoseInput().reset();
+
+                simplef.setVisible(true);
+                simplef.getGlucoseInput().reset();
 
             }
         });
         compBut.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            cf.setVisible(true);
-            cf.resetAll();
+            compf.setVisible(true);
+            compf.resetAll();
             }
         });
 
         intensiveBut.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            iF.setVisible(true);
+            intenF.setVisible(true);
+            intenF.ResetAllIntensive();
             }
         });
 
         settingsBut.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            sF.setVisible(true);
+            settingsF.setVisible(true);
             }
         });
 
         helpBut.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                hF.setVisible(true);
+                helpF.setVisible(true);
             }
         });
 
         quesBut.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                jF.setVisible(true);
+                quesF.setVisible(true);
             }
         });
     }

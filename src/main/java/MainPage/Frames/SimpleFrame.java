@@ -47,7 +47,7 @@ public class SimpleFrame extends JFrame {
                 //Next Three Lines: For demonstration Only: Print to console when enter button is pressed
                 //to check everything gets stored in the class and is ready for the database .
                 System.out.println("BGL: " +((SimpleMethod) sm).getBGL().getLevel());
-                System.out.println("Date: " + ((SimpleMethod) sm).getBGL().getDate());
+                System.out.println("Date: " + ((SimpleMethod) sm).getDate());
                 System.out.println("Time: "+((SimpleMethod) sm).getBGL().getTime());
 
                 //ADD CODE FOR SENDING TO DATABASE HERE

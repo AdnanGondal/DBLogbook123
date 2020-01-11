@@ -16,8 +16,22 @@ public class IntensiveMethod extends CompMethod {
         exercise.setEndTime(endTime);
     }
 
-    public Exercise getIntensiveExercise(){
-        return exercise;
+//No need for get method as it is already coded in parent class.
+
+    public void setIntensiveFood(String type,String name, Date time, double carbAmmount ){
+        food.setMealType(type);
+        food.setName(name);
+        food.setTime(time);
+        food.setCarbAmmount(carbAmmount);
     }
+
+    public void setIntensiveMed(String type, String name, Date time, String dosage){
+        med.setType(type);
+        med.setName(name);
+        med.setTime(time);
+        med.setDosage(dosage);
+    }
+
+
 
 }

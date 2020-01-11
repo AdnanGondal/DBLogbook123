@@ -33,8 +33,8 @@ public class CompMethod extends SimpleMethod {
         return food;
     }
 
-    public void setMedication(String type, String dosage, Date time) {
-        med.setType(type);
+    public void setMedication(String name, String dosage, Date time) {
+        med.setName(name);
         med.setDosage(dosage);
         med.setTime(time);
     }
@@ -43,9 +43,6 @@ public class CompMethod extends SimpleMethod {
         return med;
     }
 
-    @Override
-    public String getDate() {
-        if (bglEntered==true) return getDate();
-        else return null;
-    }
+
+
 }

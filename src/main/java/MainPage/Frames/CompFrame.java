@@ -61,7 +61,7 @@ public class CompFrame extends SimpleFrame {
                     ((CompMethod) cm).setBgl(gi.getTime(),gi.getuiGlucose());
                     //Next Lines are just to test only:
                     System.out.println("GI has been entered");
-                    System.out.println("GI Date: "+((CompMethod) cm).getBGL().getDate());
+                    System.out.println("GI Date: "+((CompMethod) cm).getDate());
                     System.out.println("GI Time: "+((CompMethod) cm).getBGL().getTime());
                     System.out.println("Glucose Level: "+((CompMethod) cm).getBGL().getLevel());
                     //Add database code
@@ -71,7 +71,7 @@ public class CompFrame extends SimpleFrame {
                     ((CompMethod) cm).setExercise(ei.getuiExName(),ei.getStartTime(),ei.getEndTime());
                     //Next Lines are just to test only:
                     System.out.println("Exercise has been entered");
-                    System.out.println("Exercise Date: "+((CompMethod) cm).getExercise().getDate());
+                    System.out.println("Exercise Date: "+((CompMethod) cm).getDate());
                     System.out.println("Exercise Start Time: "+((CompMethod) cm).getExercise().getStartTime());
                     System.out.println("Exercise End Time: "+((CompMethod) cm).getExercise().getEndTime());
                     System.out.println("Exercise Name: "+((CompMethod) cm).getExercise().getName());
@@ -81,7 +81,7 @@ public class CompFrame extends SimpleFrame {
                     ((CompMethod) cm).setFood(fi.getuiFoodName(),fi.getuiCarbAmmount(),fi.getTime());
                     //Next Lines are just to test only:
                     System.out.println("Food has been entered");
-                    System.out.println("Food Date: "+ ((CompMethod) cm).getFood().getDate());
+                    System.out.println("Food Date: "+ ((CompMethod) cm).getDate());
                     System.out.println("Food Time: "+ ((CompMethod) cm).getFood().getTime());
                     System.out.println("Food Name: " + ((CompMethod) cm).getFood().getName());
                     System.out.println("Carbohydrates (g): "+ ((CompMethod) cm).getFood().getCarbAmmount());
@@ -93,9 +93,9 @@ public class CompFrame extends SimpleFrame {
                     ((CompMethod) cm).setMedication(mi.getuiName(),mi.getuiDosage(),mi.getTime());
                     //Next Lines are just to test only.
                     System.out.println("Medication has been entered");
-                    System.out.println("Med Date: "+ ((CompMethod) cm).getMed().getDate());
+                    System.out.println("Med Date: "+ ((CompMethod) cm).getDate());
                     System.out.println("Med Time: "+ ((CompMethod) cm).getMed().getTime());
-                    System.out.println("Med Type: " + ((CompMethod) cm).getMed().gettype());
+                    System.out.println("Med Name: " + ((CompMethod) cm).getMed().getName());
                     System.out.println("Med Dosage: "+((CompMethod) cm).getMed().getDosage());
 
                 }

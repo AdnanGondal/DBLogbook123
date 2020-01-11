@@ -16,13 +16,8 @@ public class SimpleMethod extends Method {
     }
 
 
-    public String getDate() {
-        return bgl.getDate();
-    }
-
-
     public void setBgl(Date time, double level){
-        //bgl.setDate(date);
+
         bgl.setTime(time);
         bgl.setLevel(level);
         bglEntered = true;

@@ -32,7 +32,7 @@ public class ViewEntriesFrame extends JFrame {
 
         //BELOW IS E.G. FOR CURRENT DATE TO CHECK IF CODE WORKS
         Method method = new SimpleMethod();
-        ((SimpleMethod) method).getBGL().setDate(new Date());
+
         //ENTER CODE TO SEARCH THROUGH DATABASE AND MATCH THE METHOD(S) WITH THE SELECTED DATE...Add them to an array
         //here and iterate through the array to display all the information.
 
