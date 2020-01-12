@@ -1,6 +1,6 @@
 package RegistrationPage;
 
-import com.google.gson.Gson;
+
 
 public class RegistrationDetails {
 
