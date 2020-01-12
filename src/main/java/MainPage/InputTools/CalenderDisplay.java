@@ -26,7 +26,7 @@ public class CalenderDisplay extends JPanel {
     public  CalenderDisplay() {
             setLayout(new GridLayout(1,1));
 
-            panel.setBackground(new Color(160,255, 150));
+            panel.setBackground(new Color(156, 234, 228));
             picker.setDate(Calendar.getInstance().getTime());
             picker.setFormats(new SimpleDateFormat("dd/MM/yyyy"));
             panel.add(selectDate);
