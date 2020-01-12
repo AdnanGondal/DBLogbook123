@@ -15,6 +15,7 @@ public class RegistrationDetails {
     private String doctorphone;
     private String username;
     private String password;
+    private String familyname;
 
     RegistrationDetails(){
 
