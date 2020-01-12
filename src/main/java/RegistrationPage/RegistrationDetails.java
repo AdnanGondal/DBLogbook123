@@ -2,7 +2,7 @@ package RegistrationPage;
 
 public class RegistrationDetails {
 
-    // This is the class that stores all the registered used details. Objects of this should be stored in the database.
+    // This is the class that stores all the registered user details. Objects of this should be stored in the database.
     private String name;
     private String email;
     private String phone;
