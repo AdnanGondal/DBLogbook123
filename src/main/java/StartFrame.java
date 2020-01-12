@@ -44,11 +44,6 @@ public class StartFrame extends JFrame {
         setSize(800,600);
         initComponents();
         //Setting up the mainframe - which is the actual diabetic logbook frame.
-
-        mainframe.setSize(500, 800);
-        mainframe.setVisible(false);
-        mainframe.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        mainframe.getContentPane().add(mainPageUIControl.getMainPanel()).setBackground(new Color(156, 234, 228));
         registrationFrame.setVisible(false);
 
     }
@@ -156,6 +151,7 @@ public class StartFrame extends JFrame {
                 timer1.start();
                 //If Login Is Correct
                 mainframe.setVisible(true);
+                setVisible(false);
             }
             else{
                 jLabel_Message.setText("Invalid Username Or Password");
