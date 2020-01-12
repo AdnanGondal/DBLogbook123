@@ -1,6 +1,6 @@
 import MainPage.MainPageUIControl;
 import RegistrationPage.PersonalDetailsPanel;
-import com.google.gson.Gson;
+//import com.google.gson.Gson;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,6 +13,8 @@ public class RegistrationFrame extends JFrame {
     private JPanel registrationPanel= new JPanel();
     private PersonalDetailsPanel pds = new PersonalDetailsPanel(); // see PersonalDetailsPanel class
     private JButton submitBut = new JButton("Sumbit");
+    JFrame mainframe = new JFrame();
+    MainPageUIControl mainPageUIControl = new MainPageUIControl();
 
 
     public RegistrationFrame(){
@@ -33,11 +35,18 @@ public class RegistrationFrame extends JFrame {
         getContentPane().add(registrationPanel).setBackground(new Color(156, 234, 228));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
+        //Setting Up MainFrame
+        mainframe.setSize(500, 800);
+        mainframe.setVisible(false);
+        mainframe.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        mainframe.getContentPane().add(mainPageUIControl.getMainPanel()).setBackground(new Color(156, 234, 228));
+
         submitBut.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 setVisible(false);
+                mainframe.setVisible(true);
 
                 try {
                     pds.setRegistrationDetails();

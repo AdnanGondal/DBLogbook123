@@ -19,7 +19,7 @@ public class SimpleFrame extends JFrame {
     protected JPanel Panel = new JPanel();
     protected JButton enter = new JButton("Enter");
     protected GlucoseInput gi = new GlucoseInput();
-    protected JCheckBox TSCheck = new JCheckBox("Are you taking the reading now?");
+
 
 
     public SimpleFrame(){
@@ -53,7 +53,6 @@ public class SimpleFrame extends JFrame {
                 //ADD CODE FOR SENDING TO DATABASE HERE
 
 
-                TSCheck.setSelected(true);
                 gi.reset();
                 setVisible(false);
 
