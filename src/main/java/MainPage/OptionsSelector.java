@@ -82,11 +82,11 @@ public class OptionsSelector extends JPanel {
     private void ModifyPanels() {
         //Change colours and Layout of JPanels
         addEntriesPanel.setLayout(new GridLayout(7,1));
-        addEntriesPanel.setBackground(new Color(160,255, 150));
+        addEntriesPanel.setBackground(new Color(156, 234, 228)); // 160 255 150
         viewEntriesPanel.setLayout(new GridLayout(2,1));
-        viewEntriesPanel.setBackground(new Color(160,255, 150));
+        viewEntriesPanel.setBackground(new Color(156, 234, 228));
         otherPanel.setLayout(new GridLayout(4,1));
-        otherPanel.setBackground(new Color(160,255, 150));
+        otherPanel.setBackground(new Color(156, 234, 228));
     }
 
     private void ButtonsPressed() {

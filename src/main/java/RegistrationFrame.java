@@ -13,7 +13,7 @@ public class RegistrationFrame extends JFrame {
     private JPanel registrationPanel= new JPanel();
     private PersonalDetailsPanel pds = new PersonalDetailsPanel(); // see PersonalDetailsPanel class
     private JButton submitBut = new JButton("Sumbit");
-    JFrame mainframe = new JFrame();
+    JFrame mainframe = new JFrame("Diabetic Logbook");
     MainPageUIControl mainPageUIControl = new MainPageUIControl();
 
 
@@ -21,13 +21,13 @@ public class RegistrationFrame extends JFrame {
 
         setSize(500, 575);
         //setVisible(true);
-        setName("Registration Page");
+        setTitle("Registration Page");
         registrationPanel.setLayout(null);
 
         //Setting up Panels on the registration page frame.
         pds.setSize(500,500);
         pds.setLocation(0,0);
-        pds.setBackground(new Color(160,255, 150));
+        pds.setBackground(new Color(156, 234, 228));//160 255 150
         submitBut.setSize(500,50);
         submitBut.setLocation(0,500);
         registrationPanel.add(pds);
@@ -35,7 +35,7 @@ public class RegistrationFrame extends JFrame {
         getContentPane().add(registrationPanel).setBackground(new Color(156, 234, 228));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        //Setting Up MainFrame
+        //Setting Up MainFrame (The Main Diabetic Logbook Frame)
         mainframe.setSize(500, 800);
         mainframe.setVisible(false);
         mainframe.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
