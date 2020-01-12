@@ -1,10 +1,12 @@
 import MainPage.MainPageUIControl;
 import RegistrationPage.PersonalDetailsPanel;
+import com.google.gson.Gson;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class RegistrationFrame extends JFrame {
 
@@ -37,7 +39,11 @@ public class RegistrationFrame extends JFrame {
 
                 setVisible(false);
 
-                pds.setRegistrationDetails();
+                try {
+                    pds.setRegistrationDetails();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
                 //Code below is to test that the object of RegistrationDetails has the user input registration details.
                 //Instead of the code below printing to the console it will be sent to the server/
                 System.out.println("Username: " + pds.getRegistrationDetails().getUserName());
@@ -54,6 +60,7 @@ public class RegistrationFrame extends JFrame {
                 //END of testing the class.
 
                 //ADD CODE FOR SENDING TO DATABASE HERE.
+
             }
 
         });

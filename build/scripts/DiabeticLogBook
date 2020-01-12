@@ -64,7 +64,7 @@ case "`uname`" in
     ;;
 esac
 
-CLASSPATH=$APP_HOME/lib/DiabeticLogBook-1.0-SNAPSHOT.jar:$APP_HOME/lib/swingx-core-1.6.5-1.jar:$APP_HOME/lib/swingx-common-1.6.5-1.jar:$APP_HOME/lib/swingx-graphics-1.6.5-1.jar:$APP_HOME/lib/swingx-action-1.6.5-1.jar:$APP_HOME/lib/swingx-plaf-1.6.5-1.jar:$APP_HOME/lib/swingx-painters-1.6.5-1.jar:$APP_HOME/lib/swingx-autocomplete-1.6.5-1.jar
+CLASSPATH=$APP_HOME/lib/DiabeticLogBook-1.0-SNAPSHOT.jar:$APP_HOME/lib/swingx-core-1.6.5-1.jar:$APP_HOME/lib/swingx-common-1.6.5-1.jar:$APP_HOME/lib/swingx-graphics-1.6.5-1.jar:$APP_HOME/lib/swingx-action-1.6.5-1.jar:$APP_HOME/lib/swingx-plaf-1.6.5-1.jar:$APP_HOME/lib/swingx-painters-1.6.5-1.jar:$APP_HOME/lib/swingx-autocomplete-1.6.5-1.jar:$APP_HOME/lib/gson-2.7.jar
 
 # Determine the Java command to use to start the JVM.
 if [ -n "$JAVA_HOME" ] ; then
