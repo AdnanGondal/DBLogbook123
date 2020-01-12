@@ -63,7 +63,7 @@ set CMD_LINE_ARGS=%*
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\DiabeticLogBook-1.0-SNAPSHOT.jar;%APP_HOME%\lib\swingx-core-1.6.5-1.jar;%APP_HOME%\lib\swingx-common-1.6.5-1.jar;%APP_HOME%\lib\swingx-graphics-1.6.5-1.jar;%APP_HOME%\lib\swingx-action-1.6.5-1.jar;%APP_HOME%\lib\swingx-plaf-1.6.5-1.jar;%APP_HOME%\lib\swingx-painters-1.6.5-1.jar;%APP_HOME%\lib\swingx-autocomplete-1.6.5-1.jar
+set CLASSPATH=%APP_HOME%\lib\DiabeticLogBook-1.0-SNAPSHOT.jar;%APP_HOME%\lib\swingx-core-1.6.5-1.jar;%APP_HOME%\lib\swingx-common-1.6.5-1.jar;%APP_HOME%\lib\swingx-graphics-1.6.5-1.jar;%APP_HOME%\lib\swingx-action-1.6.5-1.jar;%APP_HOME%\lib\swingx-plaf-1.6.5-1.jar;%APP_HOME%\lib\swingx-painters-1.6.5-1.jar;%APP_HOME%\lib\swingx-autocomplete-1.6.5-1.jar;%APP_HOME%\lib\gson-2.7.jar
 
 @rem Execute DiabeticLogBook
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %DIABETIC_LOG_BOOK_OPTS%  -classpath "%CLASSPATH%" Main %CMD_LINE_ARGS%

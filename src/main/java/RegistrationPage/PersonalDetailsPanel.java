@@ -1,9 +1,19 @@
 package RegistrationPage;
 
+import com.google.gson.Gson;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 //This class codes for the JPanel that includes all the user registration page inputs.
 public class PersonalDetailsPanel extends JPanel {
@@ -208,7 +218,7 @@ public class PersonalDetailsPanel extends JPanel {
     }
 
     //Function below: To run when submit button is pressed and store everything in an object of the RegistrationDetails class.
-    public void setRegistrationDetails(){
+    public void setRegistrationDetails() throws IOException {
         registrationDetails.setName(tname.getText());
         registrationDetails.setEmail(temail.getText());
         registrationDetails.setPhone(tphone.getText());
@@ -219,8 +229,44 @@ public class PersonalDetailsPanel extends JPanel {
         registrationDetails.setDoctorphone(tdoctorphone.getText());
         registrationDetails.setUserName(tusername.getText());
         registrationDetails.setPassword(tpassword.getText());
+        Gson gson = new Gson();
+        String jsonString = gson.toJson(registrationDetails);
+        System.out.println(jsonString);
+
+        //sending to servlet
+        byte[] body = jsonString.getBytes(StandardCharsets.UTF_8);
+        URL myURL = new URL("https://calculator4.herokuapp.com/patients"); HttpURLConnection conn = null;
+        //URL myURL = new URL("http://localhost:8080/untitled/patients"); HttpURLConnection conn = null;
+        conn = (HttpURLConnection) myURL.openConnection();
+        // Set up the header
+        conn.setRequestMethod("POST");
+        conn.setRequestProperty("Accept", "application/json"); conn.setRequestProperty("charset", "utf-8"); conn.setRequestProperty("Content-Length", Integer.toString(body.length)); conn.setDoOutput(true);
+        // Write the body of the request
+
+        try (OutputStream outputStream = conn.getOutputStream())
+        {
+            outputStream.write(body, 0, body.length);
+        }
+        BufferedReader bufferedReader=null;
+        try {
+            bufferedReader = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"));
+        }
+        catch(Exception e){
+            System.out.print(e.getMessage());
+        }
+
+        String inputLine;
+        // Read the body of the response
+        while ((inputLine = bufferedReader.readLine()) != null)
+        {
+            System.out.println(inputLine);
+        }
+        bufferedReader.close();
+
+
 
     }
+
 
 
 

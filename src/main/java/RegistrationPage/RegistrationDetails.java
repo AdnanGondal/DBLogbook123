@@ -1,5 +1,7 @@
 package RegistrationPage;
 
+import com.google.gson.Gson;
+
 public class RegistrationDetails {
 
     // This is the class that stores all the registered user details. Objects of this should be stored in the database.
@@ -13,6 +15,7 @@ public class RegistrationDetails {
     private String doctorphone;
     private String username;
     private String password;
+
     RegistrationDetails(){
 
     }
@@ -86,4 +89,6 @@ public class RegistrationDetails {
     public String getPassword(){
         return password;
     }
+
+
 }
