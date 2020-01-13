@@ -12,6 +12,14 @@ import java.awt.event.ActionListener;
 import java.util.Date;
 import java.util.Hashtable;
 
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.GeneralPath;
+import java.awt.geom.Point2D;
+/*  ww w  . j  ava 2s . c o  m*/
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+
 public class QuesFrame extends JFrame {
     //The Class codes the Frame for the Questionnaire.
     protected Date date=new Date();
@@ -28,12 +36,17 @@ public class QuesFrame extends JFrame {
     //private JTextField tmno;
     private JSlider jj;
 
+
+
+
     public QuesFrame(){
         setTitle("Questionnaire");
         setSize(450,725);
 
         //Panel.setLayout(new GridLayout(12,5));
        // Panel.add(gi);
+
+
 
         title = new JLabel("Symptoms record:");
         title.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -231,6 +244,7 @@ public class QuesFrame extends JFrame {
         add(mno);
 
         mno = new JLabel("10.More infections than usual: ");
+        mno.setVisible(true);
         mno.setFont(new Font("Arial", Font.PLAIN, 20));
         mno.setSize(300, 25);
         mno.setLocation(60, 580);
@@ -277,6 +291,29 @@ public class QuesFrame extends JFrame {
 
         });
     }
+
+  /*  public void paint(Graphics g){
+        Graphics2D g2D = (Graphics2D) g;
+        Point2D.Float point = new Point2D.Float(10, 50);                     // store start point
+        GeneralPath p = new GeneralPath(GeneralPath.WIND_NON_ZERO);
+        p.moveTo(point.x, point.y);
+        p.lineTo(point.x + 20.0f, point.y - 5.0f);           // Line from start to A
+        point = (Point2D.Float) p.getCurrentPoint();
+        p.lineTo(point.x + 5.0f, point.y - 20.0f);           // Line from A to B
+        point = (Point2D.Float) p.getCurrentPoint();
+        p.lineTo(point.x + 5.0f, point.y + 20.0f);           // Line from B to C
+        point = (Point2D.Float) p.getCurrentPoint();
+        p.lineTo(point.x + 20.0f, point.y + 5.0f);           // Line from C to D
+        point = (Point2D.Float) p.getCurrentPoint();
+        p.lineTo(point.x - 20.0f, point.y + 5.0f);           // Line from D to E
+        point = (Point2D.Float) p.getCurrentPoint();
+        p.lineTo(point.x - 5.0f, point.y + 20.0f);           // Line from E to F
+        point = (Point2D.Float) p.getCurrentPoint();
+        p.lineTo(point.x - 5.0f, point.y - 20.0f);           // Line from F to g
+        p.closePath();                                       // Line from G to start
+        g2D.draw(p);
+    }
+ */
 
     //public GlucoseInput getGlucoseInput(){return gi;};
 
