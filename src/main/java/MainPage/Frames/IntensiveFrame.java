@@ -11,8 +11,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+//Class codes for the user Intensive method input.
 public class IntensiveFrame extends CompFrame {
-    //Class codes for the user Intensive method input.
+
     private JPanel CheckPanel = new JPanel();
     private IntensiveExerciseInput iei = new IntensiveExerciseInput();
     private IntensiveMedicationInput imi = new IntensiveMedicationInput();
@@ -45,7 +46,12 @@ public class IntensiveFrame extends CompFrame {
         Panel.add(ifi);
         Panel.add(imi);
         Panel.add(enteri);
+        EnteriButPressed();
 
+    }
+
+    private void EnteriButPressed() {
+        //What happens when the enter button is pressed.
         enteri.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -102,7 +108,6 @@ public class IntensiveFrame extends CompFrame {
 
             }
         });
-
     }
 
     public void ResetAllIntensive() {

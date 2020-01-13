@@ -15,19 +15,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Timer;
 
-
-
-
-//This Class codes for the first frame the user will see.
+//This Class codes for the First Frame the user will see.
 
 
 public class StartFrame extends JFrame {
 
 
-    private JFrame mainframe = new JFrame("Diabetic Logbook");
-    private MainPageUIControl mainPageUIControl = new MainPageUIControl(); //See MainPageUIControl class
+
     private JButton  loginBut = new JButton("Login");
-    //private JButton OkButton = new JButton("Ok");
     private JButton registerBut = new JButton("Register");
     private JCheckBox jCheckBox1 = new JCheckBox("Show Password");
     private JLabel welcomelabel = new JLabel("Welcome to the Diabetic Logbook App");
@@ -35,23 +30,27 @@ public class StartFrame extends JFrame {
     private JLabel passwordlabel = new JLabel("Password: ");
     private JLabel jLabel_Message = new JLabel();
     private JPanel jPanel1 = new JPanel();
-    //private JPanel jPanel_Message = new JPanel();
     private JPasswordField jPasswordField_Password = new JPasswordField();
     private JTextField jTextField_Username = new JTextField();
-    private RegistrationFrame registrationFrame = new RegistrationFrame();
+    private RegistrationFrame registrationFrame = new RegistrationFrame(); //See RegistrationFrame Class.
+    private JFrame mainframe = new JFrame("Diabetic Logbook");
+    private MainPageUIControl mainPageUIControl = new MainPageUIControl(); //See MainPageUIControl class
 
     public StartFrame() { //Constructor for Registration Page.
         setSize(550,250);
         setTitle("Login");
-        initComponents();
+        initComponents(); //initialize components of this frame.
+        SetupOtherFrames();
 
-        registrationFrame.setVisible(false);
-        //Setting up main frame: The main diabetic Logbook Frame.
+    }
+
+    private void SetupOtherFrames() {
+        registrationFrame.setVisible(false); //Set registrationFrame to not visible initially.
+        //Setting up The main diabetic Logbook Frame.
         mainframe.setSize(500, 800);
         mainframe.setVisible(false);
         mainframe.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainframe.getContentPane().add(mainPageUIControl.getMainPanel()).setBackground(new Color(156, 234, 228));
-
     }
 
     private void initComponents() {
@@ -105,6 +104,7 @@ public class StartFrame extends JFrame {
        registerBut.setLocation(200,140);
        registerBut.setSize(200,30);
        jPanel1.add(registerBut);
+       //When the Register Button is pressed:
        registerBut.addActionListener(new ActionListener() {
            @Override
            public void actionPerformed(ActionEvent e) {
@@ -117,38 +117,8 @@ public class StartFrame extends JFrame {
        add(jPanel1);
 
     }
-/*
-    // Set Timer
-    Timer timer1 = new Timer(30, new ActionListener() {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-            if(jPanel_Message.getHeight() != 105){
-                jPanel_Message.setBounds(0,0,StartFrame.this.getSize().width,jPanel_Message.getHeight() + 5);
-                if(jPanel_Message.getHeight() == 105){
-                    timer1.stop();
-                }
-            }
-        }
-    });
-
-    Timer timer2 = new Timer(30, new ActionListener() {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-            if(jPanel_Message.getHeight() != 0){
-                jPanel_Message.setBounds(0,0,StartFrame.this.getSize().width,jPanel_Message.getHeight() - 5);
-                if(jPanel_Message.getHeight() == 0){
-                    timer2.stop();
-                }
-            }
-        }
-    });
-*/
+        //When the Login Button is pressed.
     private void jButton_LoginActionPerformed(java.awt.event.ActionEvent evt) {
-
         Connection connection;
         PreparedStatement ps;
         try {
@@ -175,9 +145,7 @@ public class StartFrame extends JFrame {
         }
     }
 
-   /* private void jButton_OkActionPerformed(java.awt.event.ActionEvent evt) {
-        timer2.start();
-    }*/
+
 
     // Show And Hide Password Using Checkbox
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,29 +157,7 @@ public class StartFrame extends JFrame {
         }
     }
 
-    /*public static void main(String args[]) {
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(StartFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(StartFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(StartFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(StartFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
 
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new StartFrame().setVisible(true);
-            }
-        }); */
     }
 
 

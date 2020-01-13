@@ -1,6 +1,7 @@
 package Entries;
 
 import java.util.Date;
+//Class to store food and info.
 
 public class Food extends Activity{
     private Date date;

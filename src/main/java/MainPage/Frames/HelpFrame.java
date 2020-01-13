@@ -2,10 +2,10 @@ package MainPage.Frames;
 
 import javax.swing.*;
 import java.awt.*;
-
+//codes the frame that gives the user some info about how to use the code.
+//Also will give info on the latest features that work.
 public class HelpFrame extends JFrame {
-    //codes the frame that gives the user some info about how to use the code.
-    //Also will give info on the latest features that work.
+
     private JPanel panel = new JPanel();
     private JLabel title = new JLabel("Help");
     // Adapted from: https://stackoverflow.com/questions/10478420/jlabel-doesnt-show-a-long-paragraph

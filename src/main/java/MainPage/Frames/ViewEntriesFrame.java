@@ -10,11 +10,13 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+
 public class ViewEntriesFrame extends JFrame {
-    JPanel panel = new JPanel();
+    private JPanel panel = new JPanel();
     private JLabel intro;
     private String SelectedDate;
     private JLabel result;
+    private Method method = new SimpleMethod();
 
 
     public ViewEntriesFrame(String d){
@@ -22,45 +24,45 @@ public class ViewEntriesFrame extends JFrame {
         setTitle("View Entries");
         panel.setLayout(null);
 
+
         SelectedDate = d;
         intro = new JLabel("The Selected Date: "+ SelectedDate);
         intro.setFont(new Font("Arial", Font.PLAIN, 20));
         intro.setSize(300, 30);
         intro.setLocation(5, 5);
+        System.out.println(d);
 
 
 
-        //BELOW IS E.G. FOR CURRENT DATE TO CHECK IF CODE WORKS
-        Method method = new SimpleMethod();
-
-        //ENTER CODE TO SEARCH THROUGH DATABASE AND MATCH THE METHOD(S) WITH THE SELECTED DATE...Add them to an array
-        //here and iterate through the array to display all the information.
-
-        //Use a for Loop to go through all the methods that have the selected date, and print them out as a JLabel???
+        panel.add(intro);
+        //panel.add(result);
+        getContentPane().add(panel).setBackground(new Color(156, 234, 228));
 
 
 
-        //Below: What to do if there is no entries for the selected date. (Incomplete)
-        if (SelectedDate != ((SimpleMethod) method).getDate()) {
+    }
+
+
+    public void CheckSelectedDate(){
+        //just for testing only:
+        //HERE ENTER CODE TO SEARCH THROUGH DATABASE INSTEAD.
+        if (method.getDate()== SelectedDate){
+            result = new JLabel("This is today's date");
+            result.setFont(new Font("Arial", Font.PLAIN, 20));
+            result.setSize(300, 30);
+            result.setLocation(5, 40);
+            panel.add(result);
+        }
+        if (method.getDate() != SelectedDate) {
             result = new JLabel("No Entries for this date.");
             result.setFont(new Font("Arial", Font.PLAIN, 20));
             result.setSize(300, 30);
             result.setLocation(5, 40);
+            //System.out.println(method.getDate());
+            panel.add(result);
+
         }
-
-        if (SelectedDate== ((SimpleMethod) method).getDate()){
-            result = new JLabel("There are entries for this date.");
-            result.setFont(new Font("Arial", Font.PLAIN, 20));
-            result.setSize(300, 30);
-            result.setLocation(5, 40);
-        }
-
-
-        panel.add(intro);
-        panel.add(result);
-        getContentPane().add(panel).setBackground(new Color(156, 234, 228));
 
     }
-
 
 }

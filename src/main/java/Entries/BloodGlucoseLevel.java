@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 
+//Class to store Blood Glucose Level
 public class BloodGlucoseLevel extends Activity  {
 
     private Date time;

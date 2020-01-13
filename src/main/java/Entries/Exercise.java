@@ -2,6 +2,7 @@ package Entries;
 
 import java.util.Date;
 
+//Class to store Exercise and info.
 public class Exercise extends Activity {
     public Date StartTime;
     public Date EndTime;

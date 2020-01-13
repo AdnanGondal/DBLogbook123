@@ -10,9 +10,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+//Codes for User Comprehensive input.
 
 public class CompFrame extends SimpleFrame {
-    //Codes for User Comprehensive input.
+
     protected ExerciseInput ei = new ExerciseInput();
     protected FoodInput fi = new FoodInput();
     protected MedicationInput mi = new MedicationInput();
@@ -29,7 +30,7 @@ public class CompFrame extends SimpleFrame {
         Panel.removeAll();
         Panel.setLayout(new GridLayout(9,1));
 
-        //Below Codes the action of the Check boxes.
+        //Below Codes the action of the Checkboxes.
         GlucoseInputCheck();
         ExerciseInputCheck();
         FoodInputCheck();
@@ -123,7 +124,7 @@ public class CompFrame extends SimpleFrame {
         fiCheck.setSelected(false);
     }
 
-
+//Checkbox actions:
     private void MedicationInputCheck() {
         mi.setVisible(false);
         miCheck.setSelected(false);
