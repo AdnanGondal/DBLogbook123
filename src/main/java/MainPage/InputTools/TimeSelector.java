@@ -7,9 +7,10 @@ import java.awt.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+//This class codes the tool that allows the user to input a time. Objects of this class are repeated throughout the code.
+//Adapted from https://stackoverflow.com/questions/654342/is-there-any-good-and-free-date-and-time-picker-available-for-java-swing
 public class TimeSelector extends JPanel {
-    //This class codes the tool that allows the user to input a time. Objects of this class are repeated throughout the code.
-    //Adapted from https://stackoverflow.com/questions/654342/is-there-any-good-and-free-date-and-time-picker-available-for-java-swing
+
     private Date time = new Date();
     private JSpinner timeSpinner = new JSpinner(new SpinnerDateModel());
 
@@ -18,6 +19,7 @@ public class TimeSelector extends JPanel {
     public TimeSelector() {
         setLayout(new GridLayout(1,1));
         setBackground(new Color(160,255, 150));
+
         JSpinner.DateEditor timeEditor = new JSpinner.DateEditor(timeSpinner, "HH:mm");
         timeSpinner.setEditor(timeEditor);
         timeSpinner.setValue(new Date()); // will only show the current time
@@ -27,6 +29,7 @@ public class TimeSelector extends JPanel {
 
     }
 
+    //detect if time has been changed:
     private void TimeChanged() {
         timeSpinner.addChangeListener(new ChangeListener() {
             @Override
@@ -36,6 +39,7 @@ public class TimeSelector extends JPanel {
         });
     }
 
+    //set the time of time selector to the current time.
     public void reset(){
         timeSpinner.setValue(new Date());
     }

@@ -6,8 +6,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Date;
 
+//Class that codes for User Exercise Input Panel.
+
 public class ExerciseInput extends JPanel {
-    //Class that codes for User Exercise Input.
+
+
     protected JLabel nametext = new JLabel("Exercise Name: ");
     protected JFormattedTextField nameinput = new JFormattedTextField();
     protected JLabel starttext = new JLabel("Exercise Start Time: ");
@@ -31,6 +34,7 @@ public class ExerciseInput extends JPanel {
     public Date getEndTime(){return tend.getUserTime(); }
     public String getuiExName(){return (String) nameinput.getValue();}
     public void reset(){
+        //to set all the text fields to original and time selector to the current time.
         nameinput.setText("e.g. Running");
         tstart.reset();
         tend.reset();

@@ -6,8 +6,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Date;
 
+//Class that codes for user Food Input Panel.
 public class FoodInput extends JPanel {
-    //Class that codes for user Food Input.
+
     protected JLabel timelabel = new JLabel("Food time:");
     protected TimeSelector ts = new TimeSelector();
     protected JLabel namelabel = new JLabel("Food Name: ");
@@ -39,6 +40,7 @@ public class FoodInput extends JPanel {
     public double getuiCarbAmmount(){return (double) carbfield.getValue();}
 
     public void reset(){
+        //set all text fields to original values and time selector to the current time.
         ts.reset();
         namefield.setText("e.g. Apple");
         carbfield.setText("");

@@ -1,7 +1,7 @@
 package Entries;
 
 import java.util.Date;
-
+//Class to store Medication and info.
 public class Medication extends Activity {
     private Date time;
     private String dosage;

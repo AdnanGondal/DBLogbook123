@@ -21,15 +21,15 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
 
+//The Class codes the Frame for the Simple Method
 public class SimpleFrame extends JFrame {
-    //The Class codes the Frame for the Simple Method
+    //protected so that the inherited classes can use these,
     protected Date date=new Date();
     protected Date time;
     protected JCheckBox gicheck = new JCheckBox("Add Glucose?");
     protected JPanel Panel = new JPanel();
     protected JButton enter = new JButton("Enter");
     protected GlucoseInput gi = new GlucoseInput();
-
 
 
     public SimpleFrame(){
@@ -44,15 +44,18 @@ public class SimpleFrame extends JFrame {
 
     }
 
+    //What happens when the enter button is pressed:
     private void EnterButtonPressed() {
         enter.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e)  {
-                //What happens when entered button is pressed.
-                time = gi.getTime();
 
+                time = gi.getTime();
+                //Create object of Method.
                 Method sm = new SimpleMethod(); //See Method and SimpleMethod class.
+                //Set Blood Glucose reading's time and level.
                 ((SimpleMethod) sm).setBgl(time,gi.getuiGlucose());
+
 
                 //Next Three Lines: For demonstration Only: Print to console when enter button is pressed
                 //to check everything gets stored in the class and is ready for the database .
@@ -60,12 +63,10 @@ public class SimpleFrame extends JFrame {
                 System.out.println("Date: " + ((SimpleMethod) sm).getDate());
                 System.out.println("Time: "+((SimpleMethod) sm).getBGL().getTime());
 
-                //ADD CODE FOR SENDING TO DATABASE HERE
-
-
                 gi.reset();
                 setVisible(false);
 
+                //Code to send to database:
                 Gson gson = new Gson();
                 String jsonString = gson.toJson(sm);
                 System.out.println(jsonString);

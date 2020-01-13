@@ -2,11 +2,11 @@ package MainPage.InputPanels;
 
 import javax.swing.*;
 import java.awt.*;
-
+//Class codes for exercise input Panel for Intensive Method.
 public class IntensiveExerciseInput extends ExerciseInput {
-    //Class codes for exercise input for Intensive Method.
+
     private JLabel typetext = new JLabel("Exercise Type: ");
-    //The options for the selection of type of exercise.
+    //The options for the selection of type of exercise:
     private String[] typelist = {"Aerobic", "Strength","Flexibility","Balance"};
     private JComboBox<String> typeinput = new JComboBox<>(typelist);
 

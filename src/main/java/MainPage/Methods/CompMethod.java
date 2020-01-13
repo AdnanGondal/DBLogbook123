@@ -6,7 +6,11 @@ import Entries.Medication;
 
 import java.util.Date;
 
+//The class that will store a comprehensive method logbook entry.
+
+
 public class CompMethod extends SimpleMethod {
+    //Includes objects of Exercise, Food and Medication,
     protected Exercise exercise = new Exercise();
     protected Food food = new Food();
     protected Medication med = new Medication();

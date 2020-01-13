@@ -5,7 +5,10 @@ import MainPage.InputPanels.IntensiveExerciseInput;
 
 import java.util.Date;
 
+//This class codes for the activity of Intensive Logbook entry.
+
 public class IntensiveMethod extends CompMethod {
+
     public IntensiveMethod(){
 
     }

@@ -11,9 +11,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
 import java.util.Hashtable;
+//The Class codes the Frame for the Questionnaire.
 
 public class QuesFrame extends JFrame {
-    //The Class codes the Frame for the Questionnaire.
+
     protected Date date=new Date();
     protected Date time;
     //protected JCheckBox gicheck = new JCheckBox("Add Glucose?");

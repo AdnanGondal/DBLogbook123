@@ -3,9 +3,9 @@ package MainPage.InputPanels;
 
 import javax.swing.*;
 import java.awt.*;
-
+//Class that codes for  Medication input Panel for Intensive Method.
 public class IntensiveMedicationInput extends MedicationInput {
-    //Class that codes for  Medication input for Intensive Method.
+
     private JLabel typelabel = new JLabel("Medication Type:");
     private String[] typelist = {"Tablets", "Insulin"};
     private JComboBox<String> typeinput = new JComboBox<>(typelist);

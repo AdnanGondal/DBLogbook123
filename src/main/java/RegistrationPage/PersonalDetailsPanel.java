@@ -15,7 +15,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
-//This class codes for the JPanel that includes all the user registration page inputs.
+//This class codes for the JPanel that includes all the user registration page input fields.
 public class PersonalDetailsPanel extends JPanel {
     //All the labels on the page.
     private JLabel title;
@@ -47,10 +47,8 @@ public class PersonalDetailsPanel extends JPanel {
     private JTextField tusername;
     private JTextField tpassword;
 
-    private RegistrationDetails registrationDetails = new RegistrationDetails();
 
-
-
+    private RegistrationDetails registrationDetails = new RegistrationDetails(); //See RegistrationDetails class.
 
 
 
@@ -58,7 +56,12 @@ public class PersonalDetailsPanel extends JPanel {
     { //Adapted from: https://www.geeksforgeeks.org/java-swing-simple-user-registration-form/
 
         setLayout(null);
+        InitComponents();
 
+    }
+
+    private void InitComponents() {
+        //Setup the Panel.
         title = new JLabel("Registration Form");
         title.setFont(new Font("Arial", Font.BOLD, 30));
         title.setSize(300, 30);
@@ -209,8 +212,6 @@ public class PersonalDetailsPanel extends JPanel {
         tpassword.setSize(150,20);
         tpassword.setLocation(200,340);
         add(tpassword);
-
-
     }
 
     public RegistrationDetails getRegistrationDetails(){
@@ -219,6 +220,7 @@ public class PersonalDetailsPanel extends JPanel {
 
     //Function below: To run when submit button is pressed and store everything in an object of the RegistrationDetails class.
     public void setRegistrationDetails() throws IOException {
+
         registrationDetails.setName(tname.getText());
         registrationDetails.setEmail(temail.getText());
         registrationDetails.setPhone(tphone.getText());
@@ -229,6 +231,7 @@ public class PersonalDetailsPanel extends JPanel {
         registrationDetails.setDoctorphone(tdoctorphone.getText());
         registrationDetails.setUserName(tusername.getText());
         registrationDetails.setPassword(tpassword.getText());
+
         Gson gson = new Gson();
         String jsonString = gson.toJson(registrationDetails);
         System.out.println(jsonString);
@@ -263,11 +266,7 @@ public class PersonalDetailsPanel extends JPanel {
         }
         bufferedReader.close();
 
-
-
     }
-
-
 
 
 

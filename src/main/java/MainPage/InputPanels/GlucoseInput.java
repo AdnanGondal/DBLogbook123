@@ -6,8 +6,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Date;
 
+//Class that codes for the user glucose input Panel.
 public class GlucoseInput extends JPanel {
-    //Class that codes for the user glucose input.
+
     private JLabel timelabel = new JLabel("Please Enter the time of the reading.");
     private TimeSelector ts = new TimeSelector();
     private JLabel text = new JLabel("Please enter your blood glucose level (mmol/L): ");
@@ -28,6 +29,7 @@ public class GlucoseInput extends JPanel {
     public double getuiGlucose(){return (double) uinput.getValue();}
     public Date getTime(){return ts.getUserTime();}
     public void reset(){
+        //set text field empty and time selector to current time.
         uinput.setText("");
         ts.reset();
     }

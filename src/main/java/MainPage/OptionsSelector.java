@@ -8,9 +8,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+//This Class codes for the JPanel on the Main Diabetic Logbook Frame.
+
 public class OptionsSelector extends JPanel {
-//The is the JPanel that contains every function present in the Diabetic Logbook.
-//It is added to the Main Frame.
+
     private JPanel addEntriesPanel = new JPanel();
     private JPanel viewEntriesPanel = new JPanel();
     private JPanel otherPanel = new JPanel();
@@ -21,13 +22,13 @@ public class OptionsSelector extends JPanel {
     private JButton compBut = new JButton("Comprehensive Method");
     private JButton intensiveBut = new JButton("Intensive Method");
     //Objects of the classes that code for the frames for different Methods of adding logbook entry.
-    private SimpleFrame simplef = new SimpleFrame();
-    private CompFrame compf = new CompFrame();
-    private IntensiveFrame intenF = new IntensiveFrame();
+    private SimpleFrame simplef = new SimpleFrame(); //See SimpleFrame Class.
+    private CompFrame compf = new CompFrame(); //See CompFrame Class.
+    private IntensiveFrame intenF = new IntensiveFrame(); // See IntensiveFrame Class.
     ///Objects of classes that code for some other useful features.
-    private SettingsFrame settingsF = new SettingsFrame();
-    private HelpFrame helpF = new HelpFrame();
-    private QuesFrame quesF = new QuesFrame();
+    private SettingsFrame settingsF = new SettingsFrame(); //See SettingsFrame Class.
+    private HelpFrame helpF = new HelpFrame();  //See HelpFrame Class.
+    private QuesFrame quesF = new QuesFrame();  //See QuesFrame Class.
 
     private JLabel viewEntries = new JLabel("View Entries: ");
     private CalenderDisplay cd = new CalenderDisplay(); // See CalenderDisplay class. Allows user to select date via calender.
@@ -50,7 +51,7 @@ public class OptionsSelector extends JPanel {
     }
 
     private void ArrangePanels() {
-        //Add three JPanels into this Panel and add the different features of UI here.
+        //Add three JPanels into this JPanel and add the different features of UI here.
         addEntriesPanel.add(welcome);
         addEntriesPanel.add(addEntries);
         addEntriesPanel.add(info);
@@ -90,7 +91,7 @@ public class OptionsSelector extends JPanel {
     }
 
     private void ButtonsPressed() {
-        //What happens when the different buttons are pressed by the user:
+        //What happens when the different buttons on the User Interface are pressed by the user:
 
         simpleBut.addActionListener(new ActionListener() {
             @Override
